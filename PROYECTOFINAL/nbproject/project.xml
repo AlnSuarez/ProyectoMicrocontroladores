@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://www.netbeans.org/ns/project/1">
+    <type>com.microchip.mplab.nbide.embedded.makeproject</type>
+    <configuration>
+        <data xmlns="http://www.netbeans.org/ns/make-project/1">
+            <name>proy_pic18f_Timer0_LCD</name>
+            <creation-uuid>d04acb72-8d83-41ab-a297-6f485cb75e20</creation-uuid>
+            <make-project-type>0</make-project-type>
+            <c-extensions>c</c-extensions>
+            <cpp-extensions/>
+            <header-extensions>h</header-extensions>
+            <asminc-extensions/>
+            <sourceEncoding>ISO-8859-1</sourceEncoding>
+            <make-dep-projects/>
+            <sourceRootList>
+                <sourceRootElem>/media/l01158790/DAT/davidtec/proyectos_mplabx/pic18f45k/pbl_sem_i_ver_1.X/mcc_generated_files</sourceRootElem>
+                <sourceRootElem>/media/l01158790/DAT/davidtec/proyectos_mplabx/pic18f/pbl1_sem_i_ver_1.X/XLCD</sourceRootElem>
+                <sourceRootElem>XLCD</sourceRootElem>
+                <sourceRootElem>SW_SPI</sourceRootElem>
+            </sourceRootList>
+            <confList>
+                <confElem>
+                    <name>default</name>
+                    <type>2</type>
+                </confElem>
+            </confList>
+            <formatting>
+                <project-formatting-style>false</project-formatting-style>
+            </formatting>
+        </data>
+    </configuration>
+</project>

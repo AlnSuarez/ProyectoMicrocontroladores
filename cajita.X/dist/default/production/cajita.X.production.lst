@@ -1,0 +1,2069 @@
+
+
+Microchip Technology PIC18 LITE Macro Assembler V1.43 build -156212558 
+                                                                                               Fri Nov 27 18:52:52 2020
+
+Microchip Technology Omniscient Code Generator v1.43 (Free mode) build 201707250354
+     1                           	processor	18F4550
+     2                           	fnconf	rparam,??,?,0
+     3                           	opt	pw 120
+     4                           	opt	lm
+     5                           	psect	cinit,global,reloc=2,class=CODE,delta=1
+     6                           	psect	cstackCOMRAM,global,class=COMRAM,space=1,delta=1,noexec
+     7                           	psect	text0,global,reloc=2,class=CODE,delta=1
+     8                           	psect	text1,global,reloc=2,class=CODE,delta=1
+     9                           	psect	text2,global,reloc=2,class=CODE,delta=1
+    10                           	psect	text3,global,reloc=2,class=CODE,delta=1
+    11                           	psect	text4,global,reloc=2,class=CODE,delta=1
+    12                           	psect	text5,global,reloc=2,class=CODE,delta=1
+    13                           	psect	text6,global,reloc=2,class=CODE,delta=1
+    14                           	psect	text7,global,reloc=2,class=CODE,delta=1
+    15                           	psect	text8,global,reloc=2,class=CODE,delta=1
+    16                           	psect	intsave_regs,global,class=BIGRAM,space=1,delta=1,noexec
+    17                           	psect	rparam,global,class=COMRAM,space=1,delta=1,noexec
+    18  0000                     
+    19                           ; Version 1.43
+    20                           ; Generated 25/07/2017 GMT
+    21                           ; 
+    22                           ; Copyright © 2017, Microchip Technology Inc. and its subsidiaries ("Microchip")
+    23                           ; All rights reserved.
+    24                           ; 
+    25                           ; This software is developed by Microchip Technology Inc. and its subsidiaries ("Microch
+      +                          ip").
+    26                           ; 
+    27                           ; Redistribution and use in source and binary forms, with or without modification, are
+    28                           ; permitted provided that the following conditions are met:
+    29                           ; 
+    30                           ;     1. Redistributions of source code must retain the above copyright notice, this lis
+      +                          t of
+    31                           ;        conditions and the following disclaimer.
+    32                           ; 
+    33                           ;     2. Redistributions in binary form must reproduce the above copyright notice, this 
+      +                          list
+    34                           ;        of conditions and the following disclaimer in the documentation and/or other
+    35                           ;        materials provided with the distribution.
+    36                           ; 
+    37                           ;     3. Microchip's name may not be used to endorse or promote products derived from th
+      +                          is
+    38                           ;        software without specific prior written permission.
+    39                           ; 
+    40                           ; THIS SOFTWARE IS PROVIDED BY MICROCHIP "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES,
+    41                           ; INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS F
+      +                          OR
+    42                           ; PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL MICROCHIP BE LIABLE FOR ANY DIRECT, INDIREC
+      +                          T,
+    43                           ; INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING BUT NOT LIMITED TO
+    44                           ; PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA OR PROFITS; OR BUSINESS
+    45                           ; INTERRUPTION) HOWSOEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, ST
+      +                          RICT
+    46                           ; LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE U
+      +                          SE OF
+    47                           ; THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+    48                           ; 
+    49                           ; 
+    50                           ; Code-generator required, PIC18F4550 Definitions
+    51                           ; 
+    52                           ; SFR Addresses
+    53  0000                     _TMR0	set	4054
+    54  0000                     _PORTDbits	set	3971
+    55  0000                     _PORTCbits	set	3970
+    56  0000                     _PORTD	set	3971
+    57  0000                     _TRISC	set	3988
+    58  0000                     _TRISD	set	3989
+    59  0000                     _T0CONbits	set	4053
+    60  0000                     _INTCONbits	set	4082
+    61  0000                     _TMR0IF	set	32658
+    62  0000                     _TMR0ON	set	32431
+    63                           
+    64                           ; #config settings
+    65  0000                     
+    66                           	psect	cinit
+    67  007512                     __pcinit:
+    68                           	opt stack 0
+    69  007512                     start_initialization:
+    70                           	opt stack 0
+    71  007512                     __initialization:
+    72                           	opt stack 0
+    73  007512                     end_of_initialization:
+    74                           	opt stack 0
+    75  007512                     __end_of__initialization:
+    76                           	opt stack 0
+    77  007512  0100               	movlb	0
+    78  007514  EF1F  F03C         	goto	_main	;jump to C main() function
+    79                           
+    80                           	psect	cstackCOMRAM
+    81  000001                     __pcstackCOMRAM:
+    82                           	opt stack 0
+    83  000001                     ?_SILC:
+    84                           	opt stack 0
+    85  000001                     DO@y:
+    86                           	opt stack 0
+    87  000001                     RE@y:
+    88                           	opt stack 0
+    89  000001                     MI@y:
+    90                           	opt stack 0
+    91  000001                     FA@y:
+    92                           	opt stack 0
+    93  000001                     SOL@y:
+    94                           	opt stack 0
+    95  000001                     LA@y:
+    96                           	opt stack 0
+    97  000001                     SI@y:
+    98                           	opt stack 0
+    99                           
+   100                           ; 2 bytes @ 0x0
+   101  000001                     	ds	2
+   102  000003                     ??_DO:
+   103  000003                     ??_SILC:
+   104  000003                     
+   105                           ; 1 bytes @ 0x2
+   106  000003                     	ds	1
+   107  000004                     main@x:
+   108                           	opt stack 0
+   109                           
+   110                           ; 2 bytes @ 0x3
+   111  000004                     	ds	2
+   112  000006                     main@x_342:
+   113                           	opt stack 0
+   114                           
+   115                           ; 2 bytes @ 0x5
+   116  000006                     	ds	2
+   117  000008                     main@x_343:
+   118                           	opt stack 0
+   119                           
+   120                           ; 2 bytes @ 0x7
+   121  000008                     	ds	2
+   122  00000A                     main@x_344:
+   123                           	opt stack 0
+   124                           
+   125                           ; 2 bytes @ 0x9
+   126  00000A                     	ds	2
+   127                           
+   128 ;;
+   129 ;;Main: autosize = 0, tempsize = 0, incstack = 0, save=0
+   130 ;;
+   131 ;; *************** function _main *****************
+   132 ;; Defined at:
+   133 ;;		line 28 in file "caja.c"
+   134 ;; Parameters:    Size  Location     Type
+   135 ;;		None
+   136 ;; Auto vars:     Size  Location     Type
+   137 ;;  x               2    9[COMRAM] int 
+   138 ;;  x               2    7[COMRAM] int 
+   139 ;;  x               2    5[COMRAM] int 
+   140 ;;  x               2    3[COMRAM] int 
+   141 ;;  s               2    0        int 
+   142 ;;  b               2    0        int 
+   143 ;;  a               2    0        int 
+   144 ;; Return value:  Size  Location     Type
+   145 ;;                  1    wreg      void 
+   146 ;; Registers used:
+   147 ;;		wreg, status,2, status,0, cstack
+   148 ;; Tracked objects:
+   149 ;;		On entry : 0/0
+   150 ;;		On exit  : 0/0
+   151 ;;		Unchanged: 0/0
+   152 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7
+   153 ;;      Params:         0       0       0       0       0       0       0       0       0
+   154 ;;      Locals:         8       0       0       0       0       0       0       0       0
+   155 ;;      Temps:          0       0       0       0       0       0       0       0       0
+   156 ;;      Totals:         8       0       0       0       0       0       0       0       0
+   157 ;;Total ram usage:        8 bytes
+   158 ;; Hardware stack levels required when called:    1
+   159 ;; This function calls:
+   160 ;;		_DO
+   161 ;;		_FA
+   162 ;;		_LA
+   163 ;;		_MI
+   164 ;;		_RE
+   165 ;;		_SI
+   166 ;;		_SILC
+   167 ;;		_SOL
+   168 ;; This function is called by:
+   169 ;;		Startup code after reset
+   170 ;; This function uses a non-reentrant model
+   171 ;;
+   172                           
+   173                           	psect	text0
+   174  00783E                     __ptext0:
+   175                           	opt stack 0
+   176  00783E                     _main:
+   177                           	opt stack 30
+   178                           
+   179                           ;caja.c: 29: INTCONbits.TMR0IE =1;
+   180                           
+   181                           ;incstack = 0
+   182  00783E  8AF2               	bsf	intcon,5,c	;volatile
+   183                           
+   184                           ;caja.c: 30: INTCONbits.TMR0IF =0;
+   185  007840  94F2               	bcf	intcon,2,c	;volatile
+   186                           
+   187                           ;caja.c: 32: T0CONbits.T08BIT =0;
+   188  007842  9CD5               	bcf	4053,6,c	;volatile
+   189                           
+   190                           ;caja.c: 33: T0CONbits.T0CS =0;
+   191  007844  9AD5               	bcf	4053,5,c	;volatile
+   192                           
+   193                           ;caja.c: 34: T0CONbits.PSA =0;
+   194  007846  96D5               	bcf	4053,3,c	;volatile
+   195                           
+   196                           ;caja.c: 35: T0CONbits.T0PS = 0b110;
+   197  007848  50D5               	movf	4053,w,c	;volatile
+   198  00784A  0BF8               	andlw	-8
+   199  00784C  0906               	iorlw	6
+   200  00784E  6ED5               	movwf	4053,c	;volatile
+   201                           
+   202                           ;caja.c: 37: int a,b,s;
+   203                           ;caja.c: 38: TRISD = 0;
+   204  007850  0E00               	movlw	0
+   205  007852  6E95               	movwf	3989,c	;volatile
+   206                           
+   207                           ;caja.c: 39: TRISC = 0xff;
+   208  007854  6894               	setf	3988,c	;volatile
+   209                           
+   210                           ;caja.c: 43: PORTD =0;
+   211  007856  0E00               	movlw	0
+   212  007858  6E83               	movwf	3971,c	;volatile
+   213                           
+   214                           ;caja.c: 46: if(PORTCbits.RC0==1){
+   215  00785A  A082               	btfss	3970,0,c	;volatile
+   216  00785C  D0F2               	goto	l43
+   217                           
+   218                           ;caja.c: 48: int x = 1;
+   219  00785E  0E00               	movlw	0
+   220  007860  6E05               	movwf	main@x+1,c
+   221  007862  0E01               	movlw	1
+   222  007864  6E04               	movwf	main@x,c
+   223                           
+   224                           ;caja.c: 50: DO(x);SILC();DO(x);SILC();DO(x);SILC(x);FA(x);LA(x);
+   225  007866  C004  F001         	movff	main@x,DO@y
+   226  00786A  C005  F002         	movff	main@x+1,DO@y+1
+   227  00786E  ECA7  F03B         	call	_DO	;wreg free
+   228  007872  EC8C  F03A         	call	_SILC	;wreg free
+   229  007876  C004  F001         	movff	main@x,DO@y
+   230  00787A  C005  F002         	movff	main@x+1,DO@y+1
+   231  00787E  ECA7  F03B         	call	_DO	;wreg free
+   232  007882  EC8C  F03A         	call	_SILC	;wreg free
+   233  007886  C004  F001         	movff	main@x,DO@y
+   234  00788A  C005  F002         	movff	main@x+1,DO@y+1
+   235  00788E  ECA7  F03B         	call	_DO	;wreg free
+   236  007892  C004  F001         	movff	main@x,?_SILC
+   237  007896  C005  F002         	movff	main@x+1,?_SILC+1
+   238  00789A  EC8C  F03A         	call	_SILC	;wreg free
+   239  00789E  C004  F001         	movff	main@x,FA@y
+   240  0078A2  C005  F002         	movff	main@x+1,FA@y+1
+   241  0078A6  EC6D  F03B         	call	_FA	;wreg free
+   242  0078AA  C004  F001         	movff	main@x,LA@y
+   243  0078AE  C005  F002         	movff	main@x+1,LA@y+1
+   244  0078B2  ECC9  F03A         	call	_LA	;wreg free
+   245                           
+   246                           ;caja.c: 51: DO(x);SILC();DO(x);SILC();DO(x);SILC(x);FA(x);LA(x);
+   247  0078B6  C004  F001         	movff	main@x,DO@y
+   248  0078BA  C005  F002         	movff	main@x+1,DO@y+1
+   249  0078BE  ECA7  F03B         	call	_DO	;wreg free
+   250  0078C2  EC8C  F03A         	call	_SILC	;wreg free
+   251  0078C6  C004  F001         	movff	main@x,DO@y
+   252  0078CA  C005  F002         	movff	main@x+1,DO@y+1
+   253  0078CE  ECA7  F03B         	call	_DO	;wreg free
+   254  0078D2  EC8C  F03A         	call	_SILC	;wreg free
+   255  0078D6  C004  F001         	movff	main@x,DO@y
+   256  0078DA  C005  F002         	movff	main@x+1,DO@y+1
+   257  0078DE  ECA7  F03B         	call	_DO	;wreg free
+   258  0078E2  C004  F001         	movff	main@x,?_SILC
+   259  0078E6  C005  F002         	movff	main@x+1,?_SILC+1
+   260  0078EA  EC8C  F03A         	call	_SILC	;wreg free
+   261  0078EE  C004  F001         	movff	main@x,FA@y
+   262  0078F2  C005  F002         	movff	main@x+1,FA@y+1
+   263  0078F6  EC6D  F03B         	call	_FA	;wreg free
+   264  0078FA  C004  F001         	movff	main@x,LA@y
+   265  0078FE  C005  F002         	movff	main@x+1,LA@y+1
+   266  007902  ECC9  F03A         	call	_LA	;wreg free
+   267                           
+   268                           ;caja.c: 52: FA(x);SILC();FA(x);MI(x);SILC();MI(x);RE(x);SILC();RE(x);DO(x);
+   269  007906  C004  F001         	movff	main@x,FA@y
+   270  00790A  C005  F002         	movff	main@x+1,FA@y+1
+   271  00790E  EC6D  F03B         	call	_FA	;wreg free
+   272  007912  EC8C  F03A         	call	_SILC	;wreg free
+   273  007916  C004  F001         	movff	main@x,FA@y
+   274  00791A  C005  F002         	movff	main@x+1,FA@y+1
+   275  00791E  EC6D  F03B         	call	_FA	;wreg free
+   276  007922  C004  F001         	movff	main@x,MI@y
+   277  007926  C005  F002         	movff	main@x+1,MI@y+1
+   278  00792A  ECFF  F03A         	call	_MI	;wreg free
+   279  00792E  EC8C  F03A         	call	_SILC	;wreg free
+   280  007932  C004  F001         	movff	main@x,MI@y
+   281  007936  C005  F002         	movff	main@x+1,MI@y+1
+   282  00793A  ECFF  F03A         	call	_MI	;wreg free
+   283  00793E  C004  F001         	movff	main@x,RE@y
+   284  007942  C005  F002         	movff	main@x+1,RE@y+1
+   285  007946  ECE3  F03B         	call	_RE	;wreg free
+   286  00794A  EC8C  F03A         	call	_SILC	;wreg free
+   287  00794E  C004  F001         	movff	main@x,RE@y
+   288  007952  C005  F002         	movff	main@x+1,RE@y+1
+   289  007956  ECE3  F03B         	call	_RE	;wreg free
+   290  00795A  C004  F001         	movff	main@x,DO@y
+   291  00795E  C005  F002         	movff	main@x+1,DO@y+1
+   292  007962  ECA7  F03B         	call	_DO	;wreg free
+   293                           
+   294                           ;caja.c: 53: DO(x);SILC();DO(x);SILC();DO(x);MI(x);SOL(x);
+   295  007966  C004  F001         	movff	main@x,DO@y
+   296  00796A  C005  F002         	movff	main@x+1,DO@y+1
+   297  00796E  ECA7  F03B         	call	_DO	;wreg free
+   298  007972  EC8C  F03A         	call	_SILC	;wreg free
+   299  007976  C004  F001         	movff	main@x,DO@y
+   300  00797A  C005  F002         	movff	main@x+1,DO@y+1
+   301  00797E  ECA7  F03B         	call	_DO	;wreg free
+   302  007982  EC8C  F03A         	call	_SILC	;wreg free
+   303  007986  C004  F001         	movff	main@x,DO@y
+   304  00798A  C005  F002         	movff	main@x+1,DO@y+1
+   305  00798E  ECA7  F03B         	call	_DO	;wreg free
+   306  007992  C004  F001         	movff	main@x,MI@y
+   307  007996  C005  F002         	movff	main@x+1,MI@y+1
+   308  00799A  ECFF  F03A         	call	_MI	;wreg free
+   309  00799E  C004  F001         	movff	main@x,SOL@y
+   310  0079A2  C005  F002         	movff	main@x+1,SOL@y+1
+   311  0079A6  EC95  F03A         	call	_SOL	;wreg free
+   312                           
+   313                           ;caja.c: 54: DO(x);SILC();DO(x);SILC();DO(x);MI(x);SOL(x);
+   314  0079AA  C004  F001         	movff	main@x,DO@y
+   315  0079AE  C005  F002         	movff	main@x+1,DO@y+1
+   316  0079B2  ECA7  F03B         	call	_DO	;wreg free
+   317  0079B6  EC8C  F03A         	call	_SILC	;wreg free
+   318  0079BA  C004  F001         	movff	main@x,DO@y
+   319  0079BE  C005  F002         	movff	main@x+1,DO@y+1
+   320  0079C2  ECA7  F03B         	call	_DO	;wreg free
+   321  0079C6  EC8C  F03A         	call	_SILC	;wreg free
+   322  0079CA  C004  F001         	movff	main@x,DO@y
+   323  0079CE  C005  F002         	movff	main@x+1,DO@y+1
+   324  0079D2  ECA7  F03B         	call	_DO	;wreg free
+   325  0079D6  C004  F001         	movff	main@x,MI@y
+   326  0079DA  C005  F002         	movff	main@x+1,MI@y+1
+   327  0079DE  ECFF  F03A         	call	_MI	;wreg free
+   328  0079E2  C004  F001         	movff	main@x,SOL@y
+   329  0079E6  C005  F002         	movff	main@x+1,SOL@y+1
+   330  0079EA  EC95  F03A         	call	_SOL	;wreg free
+   331                           
+   332                           ;caja.c: 55: DO(x);RE(x);DO(x);SI(x);LA(x);SOL(x);FA(x);
+   333  0079EE  C004  F001         	movff	main@x,DO@y
+   334  0079F2  C005  F002         	movff	main@x+1,DO@y+1
+   335  0079F6  ECA7  F03B         	call	_DO	;wreg free
+   336  0079FA  C004  F001         	movff	main@x,RE@y
+   337  0079FE  C005  F002         	movff	main@x+1,RE@y+1
+   338  007A02  ECE3  F03B         	call	_RE	;wreg free
+   339  007A06  C004  F001         	movff	main@x,DO@y
+   340  007A0A  C005  F002         	movff	main@x+1,DO@y+1
+   341  007A0E  ECA7  F03B         	call	_DO	;wreg free
+   342  007A12  C004  F001         	movff	main@x,SI@y
+   343  007A16  C005  F002         	movff	main@x+1,SI@y+1
+   344  007A1A  EC35  F03B         	call	_SI	;wreg free
+   345  007A1E  C004  F001         	movff	main@x,LA@y
+   346  007A22  C005  F002         	movff	main@x+1,LA@y+1
+   347  007A26  ECC9  F03A         	call	_LA	;wreg free
+   348  007A2A  C004  F001         	movff	main@x,SOL@y
+   349  007A2E  C005  F002         	movff	main@x+1,SOL@y+1
+   350  007A32  EC95  F03A         	call	_SOL	;wreg free
+   351  007A36  C004  F001         	movff	main@x,FA@y
+   352  007A3A  C005  F002         	movff	main@x+1,FA@y+1
+   353  007A3E  EC6D  F03B         	call	_FA	;wreg free
+   354  007A42                     l43:
+   355                           
+   356                           ;caja.c: 56: }
+   357                           ;caja.c: 57: if(PORTCbits.RC1==1){
+   358  007A42  A282               	btfss	3970,1,c	;volatile
+   359  007A44  D0F2               	goto	l44
+   360                           
+   361                           ;caja.c: 58: int x = 2;
+   362  007A46  0E00               	movlw	0
+   363  007A48  6E07               	movwf	main@x_342+1,c
+   364  007A4A  0E02               	movlw	2
+   365  007A4C  6E06               	movwf	main@x_342,c
+   366                           
+   367                           ;caja.c: 60: DO(x);SILC();DO(x);SILC();DO(x);SILC(x);FA(x);LA(x);
+   368  007A4E  C006  F001         	movff	main@x_342,DO@y
+   369  007A52  C007  F002         	movff	main@x_342+1,DO@y+1
+   370  007A56  ECA7  F03B         	call	_DO	;wreg free
+   371  007A5A  EC8C  F03A         	call	_SILC	;wreg free
+   372  007A5E  C006  F001         	movff	main@x_342,DO@y
+   373  007A62  C007  F002         	movff	main@x_342+1,DO@y+1
+   374  007A66  ECA7  F03B         	call	_DO	;wreg free
+   375  007A6A  EC8C  F03A         	call	_SILC	;wreg free
+   376  007A6E  C006  F001         	movff	main@x_342,DO@y
+   377  007A72  C007  F002         	movff	main@x_342+1,DO@y+1
+   378  007A76  ECA7  F03B         	call	_DO	;wreg free
+   379  007A7A  C006  F001         	movff	main@x_342,?_SILC
+   380  007A7E  C007  F002         	movff	main@x_342+1,?_SILC+1
+   381  007A82  EC8C  F03A         	call	_SILC	;wreg free
+   382  007A86  C006  F001         	movff	main@x_342,FA@y
+   383  007A8A  C007  F002         	movff	main@x_342+1,FA@y+1
+   384  007A8E  EC6D  F03B         	call	_FA	;wreg free
+   385  007A92  C006  F001         	movff	main@x_342,LA@y
+   386  007A96  C007  F002         	movff	main@x_342+1,LA@y+1
+   387  007A9A  ECC9  F03A         	call	_LA	;wreg free
+   388                           
+   389                           ;caja.c: 61: DO(x);SILC();DO(x);SILC();DO(x);SILC(x);FA(x);LA(x);
+   390  007A9E  C006  F001         	movff	main@x_342,DO@y
+   391  007AA2  C007  F002         	movff	main@x_342+1,DO@y+1
+   392  007AA6  ECA7  F03B         	call	_DO	;wreg free
+   393  007AAA  EC8C  F03A         	call	_SILC	;wreg free
+   394  007AAE  C006  F001         	movff	main@x_342,DO@y
+   395  007AB2  C007  F002         	movff	main@x_342+1,DO@y+1
+   396  007AB6  ECA7  F03B         	call	_DO	;wreg free
+   397  007ABA  EC8C  F03A         	call	_SILC	;wreg free
+   398  007ABE  C006  F001         	movff	main@x_342,DO@y
+   399  007AC2  C007  F002         	movff	main@x_342+1,DO@y+1
+   400  007AC6  ECA7  F03B         	call	_DO	;wreg free
+   401  007ACA  C006  F001         	movff	main@x_342,?_SILC
+   402  007ACE  C007  F002         	movff	main@x_342+1,?_SILC+1
+   403  007AD2  EC8C  F03A         	call	_SILC	;wreg free
+   404  007AD6  C006  F001         	movff	main@x_342,FA@y
+   405  007ADA  C007  F002         	movff	main@x_342+1,FA@y+1
+   406  007ADE  EC6D  F03B         	call	_FA	;wreg free
+   407  007AE2  C006  F001         	movff	main@x_342,LA@y
+   408  007AE6  C007  F002         	movff	main@x_342+1,LA@y+1
+   409  007AEA  ECC9  F03A         	call	_LA	;wreg free
+   410                           
+   411                           ;caja.c: 62: FA(x);SILC();FA(x);MI(x);SILC();MI(x);RE(x);SILC();RE(x);DO(x);
+   412  007AEE  C006  F001         	movff	main@x_342,FA@y
+   413  007AF2  C007  F002         	movff	main@x_342+1,FA@y+1
+   414  007AF6  EC6D  F03B         	call	_FA	;wreg free
+   415  007AFA  EC8C  F03A         	call	_SILC	;wreg free
+   416  007AFE  C006  F001         	movff	main@x_342,FA@y
+   417  007B02  C007  F002         	movff	main@x_342+1,FA@y+1
+   418  007B06  EC6D  F03B         	call	_FA	;wreg free
+   419  007B0A  C006  F001         	movff	main@x_342,MI@y
+   420  007B0E  C007  F002         	movff	main@x_342+1,MI@y+1
+   421  007B12  ECFF  F03A         	call	_MI	;wreg free
+   422  007B16  EC8C  F03A         	call	_SILC	;wreg free
+   423  007B1A  C006  F001         	movff	main@x_342,MI@y
+   424  007B1E  C007  F002         	movff	main@x_342+1,MI@y+1
+   425  007B22  ECFF  F03A         	call	_MI	;wreg free
+   426  007B26  C006  F001         	movff	main@x_342,RE@y
+   427  007B2A  C007  F002         	movff	main@x_342+1,RE@y+1
+   428  007B2E  ECE3  F03B         	call	_RE	;wreg free
+   429  007B32  EC8C  F03A         	call	_SILC	;wreg free
+   430  007B36  C006  F001         	movff	main@x_342,RE@y
+   431  007B3A  C007  F002         	movff	main@x_342+1,RE@y+1
+   432  007B3E  ECE3  F03B         	call	_RE	;wreg free
+   433  007B42  C006  F001         	movff	main@x_342,DO@y
+   434  007B46  C007  F002         	movff	main@x_342+1,DO@y+1
+   435  007B4A  ECA7  F03B         	call	_DO	;wreg free
+   436                           
+   437                           ;caja.c: 63: DO(x);SILC();DO(x);SILC();DO(x);MI(x);SOL(x);
+   438  007B4E  C006  F001         	movff	main@x_342,DO@y
+   439  007B52  C007  F002         	movff	main@x_342+1,DO@y+1
+   440  007B56  ECA7  F03B         	call	_DO	;wreg free
+   441  007B5A  EC8C  F03A         	call	_SILC	;wreg free
+   442  007B5E  C006  F001         	movff	main@x_342,DO@y
+   443  007B62  C007  F002         	movff	main@x_342+1,DO@y+1
+   444  007B66  ECA7  F03B         	call	_DO	;wreg free
+   445  007B6A  EC8C  F03A         	call	_SILC	;wreg free
+   446  007B6E  C006  F001         	movff	main@x_342,DO@y
+   447  007B72  C007  F002         	movff	main@x_342+1,DO@y+1
+   448  007B76  ECA7  F03B         	call	_DO	;wreg free
+   449  007B7A  C006  F001         	movff	main@x_342,MI@y
+   450  007B7E  C007  F002         	movff	main@x_342+1,MI@y+1
+   451  007B82  ECFF  F03A         	call	_MI	;wreg free
+   452  007B86  C006  F001         	movff	main@x_342,SOL@y
+   453  007B8A  C007  F002         	movff	main@x_342+1,SOL@y+1
+   454  007B8E  EC95  F03A         	call	_SOL	;wreg free
+   455                           
+   456                           ;caja.c: 64: DO(x);SILC();DO(x);SILC();DO(x);MI(x);SOL(x);
+   457  007B92  C006  F001         	movff	main@x_342,DO@y
+   458  007B96  C007  F002         	movff	main@x_342+1,DO@y+1
+   459  007B9A  ECA7  F03B         	call	_DO	;wreg free
+   460  007B9E  EC8C  F03A         	call	_SILC	;wreg free
+   461  007BA2  C006  F001         	movff	main@x_342,DO@y
+   462  007BA6  C007  F002         	movff	main@x_342+1,DO@y+1
+   463  007BAA  ECA7  F03B         	call	_DO	;wreg free
+   464  007BAE  EC8C  F03A         	call	_SILC	;wreg free
+   465  007BB2  C006  F001         	movff	main@x_342,DO@y
+   466  007BB6  C007  F002         	movff	main@x_342+1,DO@y+1
+   467  007BBA  ECA7  F03B         	call	_DO	;wreg free
+   468  007BBE  C006  F001         	movff	main@x_342,MI@y
+   469  007BC2  C007  F002         	movff	main@x_342+1,MI@y+1
+   470  007BC6  ECFF  F03A         	call	_MI	;wreg free
+   471  007BCA  C006  F001         	movff	main@x_342,SOL@y
+   472  007BCE  C007  F002         	movff	main@x_342+1,SOL@y+1
+   473  007BD2  EC95  F03A         	call	_SOL	;wreg free
+   474                           
+   475                           ;caja.c: 65: DO(x);RE(x);DO(x);SI(x);LA(x);SOL(x);FA(x);
+   476  007BD6  C006  F001         	movff	main@x_342,DO@y
+   477  007BDA  C007  F002         	movff	main@x_342+1,DO@y+1
+   478  007BDE  ECA7  F03B         	call	_DO	;wreg free
+   479  007BE2  C006  F001         	movff	main@x_342,RE@y
+   480  007BE6  C007  F002         	movff	main@x_342+1,RE@y+1
+   481  007BEA  ECE3  F03B         	call	_RE	;wreg free
+   482  007BEE  C006  F001         	movff	main@x_342,DO@y
+   483  007BF2  C007  F002         	movff	main@x_342+1,DO@y+1
+   484  007BF6  ECA7  F03B         	call	_DO	;wreg free
+   485  007BFA  C006  F001         	movff	main@x_342,SI@y
+   486  007BFE  C007  F002         	movff	main@x_342+1,SI@y+1
+   487  007C02  EC35  F03B         	call	_SI	;wreg free
+   488  007C06  C006  F001         	movff	main@x_342,LA@y
+   489  007C0A  C007  F002         	movff	main@x_342+1,LA@y+1
+   490  007C0E  ECC9  F03A         	call	_LA	;wreg free
+   491  007C12  C006  F001         	movff	main@x_342,SOL@y
+   492  007C16  C007  F002         	movff	main@x_342+1,SOL@y+1
+   493  007C1A  EC95  F03A         	call	_SOL	;wreg free
+   494  007C1E  C006  F001         	movff	main@x_342,FA@y
+   495  007C22  C007  F002         	movff	main@x_342+1,FA@y+1
+   496  007C26  EC6D  F03B         	call	_FA	;wreg free
+   497  007C2A                     l44:
+   498                           
+   499                           ;caja.c: 66: }
+   500                           ;caja.c: 68: if(PORTCbits.RC2==1){
+   501  007C2A  A482               	btfss	3970,2,c	;volatile
+   502  007C2C  D0F2               	goto	l45
+   503                           
+   504                           ;caja.c: 69: int x = 3;
+   505  007C2E  0E00               	movlw	0
+   506  007C30  6E09               	movwf	main@x_343+1,c
+   507  007C32  0E03               	movlw	3
+   508  007C34  6E08               	movwf	main@x_343,c
+   509                           
+   510                           ;caja.c: 71: DO(x);SILC();DO(x);SILC();DO(x);SILC(x);FA(x);LA(x);
+   511  007C36  C008  F001         	movff	main@x_343,DO@y
+   512  007C3A  C009  F002         	movff	main@x_343+1,DO@y+1
+   513  007C3E  ECA7  F03B         	call	_DO	;wreg free
+   514  007C42  EC8C  F03A         	call	_SILC	;wreg free
+   515  007C46  C008  F001         	movff	main@x_343,DO@y
+   516  007C4A  C009  F002         	movff	main@x_343+1,DO@y+1
+   517  007C4E  ECA7  F03B         	call	_DO	;wreg free
+   518  007C52  EC8C  F03A         	call	_SILC	;wreg free
+   519  007C56  C008  F001         	movff	main@x_343,DO@y
+   520  007C5A  C009  F002         	movff	main@x_343+1,DO@y+1
+   521  007C5E  ECA7  F03B         	call	_DO	;wreg free
+   522  007C62  C008  F001         	movff	main@x_343,?_SILC
+   523  007C66  C009  F002         	movff	main@x_343+1,?_SILC+1
+   524  007C6A  EC8C  F03A         	call	_SILC	;wreg free
+   525  007C6E  C008  F001         	movff	main@x_343,FA@y
+   526  007C72  C009  F002         	movff	main@x_343+1,FA@y+1
+   527  007C76  EC6D  F03B         	call	_FA	;wreg free
+   528  007C7A  C008  F001         	movff	main@x_343,LA@y
+   529  007C7E  C009  F002         	movff	main@x_343+1,LA@y+1
+   530  007C82  ECC9  F03A         	call	_LA	;wreg free
+   531                           
+   532                           ;caja.c: 72: DO(x);SILC();DO(x);SILC();DO(x);SILC(x);FA(x);LA(x);
+   533  007C86  C008  F001         	movff	main@x_343,DO@y
+   534  007C8A  C009  F002         	movff	main@x_343+1,DO@y+1
+   535  007C8E  ECA7  F03B         	call	_DO	;wreg free
+   536  007C92  EC8C  F03A         	call	_SILC	;wreg free
+   537  007C96  C008  F001         	movff	main@x_343,DO@y
+   538  007C9A  C009  F002         	movff	main@x_343+1,DO@y+1
+   539  007C9E  ECA7  F03B         	call	_DO	;wreg free
+   540  007CA2  EC8C  F03A         	call	_SILC	;wreg free
+   541  007CA6  C008  F001         	movff	main@x_343,DO@y
+   542  007CAA  C009  F002         	movff	main@x_343+1,DO@y+1
+   543  007CAE  ECA7  F03B         	call	_DO	;wreg free
+   544  007CB2  C008  F001         	movff	main@x_343,?_SILC
+   545  007CB6  C009  F002         	movff	main@x_343+1,?_SILC+1
+   546  007CBA  EC8C  F03A         	call	_SILC	;wreg free
+   547  007CBE  C008  F001         	movff	main@x_343,FA@y
+   548  007CC2  C009  F002         	movff	main@x_343+1,FA@y+1
+   549  007CC6  EC6D  F03B         	call	_FA	;wreg free
+   550  007CCA  C008  F001         	movff	main@x_343,LA@y
+   551  007CCE  C009  F002         	movff	main@x_343+1,LA@y+1
+   552  007CD2  ECC9  F03A         	call	_LA	;wreg free
+   553                           
+   554                           ;caja.c: 73: FA(x);SILC();FA(x);MI(x);SILC();MI(x);RE(x);SILC();RE(x);DO(x);
+   555  007CD6  C008  F001         	movff	main@x_343,FA@y
+   556  007CDA  C009  F002         	movff	main@x_343+1,FA@y+1
+   557  007CDE  EC6D  F03B         	call	_FA	;wreg free
+   558  007CE2  EC8C  F03A         	call	_SILC	;wreg free
+   559  007CE6  C008  F001         	movff	main@x_343,FA@y
+   560  007CEA  C009  F002         	movff	main@x_343+1,FA@y+1
+   561  007CEE  EC6D  F03B         	call	_FA	;wreg free
+   562  007CF2  C008  F001         	movff	main@x_343,MI@y
+   563  007CF6  C009  F002         	movff	main@x_343+1,MI@y+1
+   564  007CFA  ECFF  F03A         	call	_MI	;wreg free
+   565  007CFE  EC8C  F03A         	call	_SILC	;wreg free
+   566  007D02  C008  F001         	movff	main@x_343,MI@y
+   567  007D06  C009  F002         	movff	main@x_343+1,MI@y+1
+   568  007D0A  ECFF  F03A         	call	_MI	;wreg free
+   569  007D0E  C008  F001         	movff	main@x_343,RE@y
+   570  007D12  C009  F002         	movff	main@x_343+1,RE@y+1
+   571  007D16  ECE3  F03B         	call	_RE	;wreg free
+   572  007D1A  EC8C  F03A         	call	_SILC	;wreg free
+   573  007D1E  C008  F001         	movff	main@x_343,RE@y
+   574  007D22  C009  F002         	movff	main@x_343+1,RE@y+1
+   575  007D26  ECE3  F03B         	call	_RE	;wreg free
+   576  007D2A  C008  F001         	movff	main@x_343,DO@y
+   577  007D2E  C009  F002         	movff	main@x_343+1,DO@y+1
+   578  007D32  ECA7  F03B         	call	_DO	;wreg free
+   579                           
+   580                           ;caja.c: 74: DO(x);SILC();DO(x);SILC();DO(x);MI(x);SOL(x);
+   581  007D36  C008  F001         	movff	main@x_343,DO@y
+   582  007D3A  C009  F002         	movff	main@x_343+1,DO@y+1
+   583  007D3E  ECA7  F03B         	call	_DO	;wreg free
+   584  007D42  EC8C  F03A         	call	_SILC	;wreg free
+   585  007D46  C008  F001         	movff	main@x_343,DO@y
+   586  007D4A  C009  F002         	movff	main@x_343+1,DO@y+1
+   587  007D4E  ECA7  F03B         	call	_DO	;wreg free
+   588  007D52  EC8C  F03A         	call	_SILC	;wreg free
+   589  007D56  C008  F001         	movff	main@x_343,DO@y
+   590  007D5A  C009  F002         	movff	main@x_343+1,DO@y+1
+   591  007D5E  ECA7  F03B         	call	_DO	;wreg free
+   592  007D62  C008  F001         	movff	main@x_343,MI@y
+   593  007D66  C009  F002         	movff	main@x_343+1,MI@y+1
+   594  007D6A  ECFF  F03A         	call	_MI	;wreg free
+   595  007D6E  C008  F001         	movff	main@x_343,SOL@y
+   596  007D72  C009  F002         	movff	main@x_343+1,SOL@y+1
+   597  007D76  EC95  F03A         	call	_SOL	;wreg free
+   598                           
+   599                           ;caja.c: 75: DO(x);SILC();DO(x);SILC();DO(x);MI(x);SOL(x);
+   600  007D7A  C008  F001         	movff	main@x_343,DO@y
+   601  007D7E  C009  F002         	movff	main@x_343+1,DO@y+1
+   602  007D82  ECA7  F03B         	call	_DO	;wreg free
+   603  007D86  EC8C  F03A         	call	_SILC	;wreg free
+   604  007D8A  C008  F001         	movff	main@x_343,DO@y
+   605  007D8E  C009  F002         	movff	main@x_343+1,DO@y+1
+   606  007D92  ECA7  F03B         	call	_DO	;wreg free
+   607  007D96  EC8C  F03A         	call	_SILC	;wreg free
+   608  007D9A  C008  F001         	movff	main@x_343,DO@y
+   609  007D9E  C009  F002         	movff	main@x_343+1,DO@y+1
+   610  007DA2  ECA7  F03B         	call	_DO	;wreg free
+   611  007DA6  C008  F001         	movff	main@x_343,MI@y
+   612  007DAA  C009  F002         	movff	main@x_343+1,MI@y+1
+   613  007DAE  ECFF  F03A         	call	_MI	;wreg free
+   614  007DB2  C008  F001         	movff	main@x_343,SOL@y
+   615  007DB6  C009  F002         	movff	main@x_343+1,SOL@y+1
+   616  007DBA  EC95  F03A         	call	_SOL	;wreg free
+   617                           
+   618                           ;caja.c: 76: DO(x);RE(x);DO(x);SI(x);LA(x);SOL(x);FA(x);
+   619  007DBE  C008  F001         	movff	main@x_343,DO@y
+   620  007DC2  C009  F002         	movff	main@x_343+1,DO@y+1
+   621  007DC6  ECA7  F03B         	call	_DO	;wreg free
+   622  007DCA  C008  F001         	movff	main@x_343,RE@y
+   623  007DCE  C009  F002         	movff	main@x_343+1,RE@y+1
+   624  007DD2  ECE3  F03B         	call	_RE	;wreg free
+   625  007DD6  C008  F001         	movff	main@x_343,DO@y
+   626  007DDA  C009  F002         	movff	main@x_343+1,DO@y+1
+   627  007DDE  ECA7  F03B         	call	_DO	;wreg free
+   628  007DE2  C008  F001         	movff	main@x_343,SI@y
+   629  007DE6  C009  F002         	movff	main@x_343+1,SI@y+1
+   630  007DEA  EC35  F03B         	call	_SI	;wreg free
+   631  007DEE  C008  F001         	movff	main@x_343,LA@y
+   632  007DF2  C009  F002         	movff	main@x_343+1,LA@y+1
+   633  007DF6  ECC9  F03A         	call	_LA	;wreg free
+   634  007DFA  C008  F001         	movff	main@x_343,SOL@y
+   635  007DFE  C009  F002         	movff	main@x_343+1,SOL@y+1
+   636  007E02  EC95  F03A         	call	_SOL	;wreg free
+   637  007E06  C008  F001         	movff	main@x_343,FA@y
+   638  007E0A  C009  F002         	movff	main@x_343+1,FA@y+1
+   639  007E0E  EC6D  F03B         	call	_FA	;wreg free
+   640  007E12                     l45:
+   641                           
+   642                           ;caja.c: 77: }
+   643                           ;caja.c: 78: if(PORTCbits.RC4==1){
+   644  007E12  A882               	btfss	3970,4,c	;volatile
+   645  007E14  EF00  F000         	goto	start
+   646                           
+   647                           ;caja.c: 79: int x = 4;
+   648  007E18  0E00               	movlw	0
+   649  007E1A  6E0B               	movwf	main@x_344+1,c
+   650  007E1C  0E04               	movlw	4
+   651  007E1E  6E0A               	movwf	main@x_344,c
+   652                           
+   653                           ;caja.c: 81: DO(x);SILC();DO(x);SILC();DO(x);SILC(x);FA(x);LA(x);
+   654  007E20  C00A  F001         	movff	main@x_344,DO@y
+   655  007E24  C00B  F002         	movff	main@x_344+1,DO@y+1
+   656  007E28  ECA7  F03B         	call	_DO	;wreg free
+   657  007E2C  EC8C  F03A         	call	_SILC	;wreg free
+   658  007E30  C00A  F001         	movff	main@x_344,DO@y
+   659  007E34  C00B  F002         	movff	main@x_344+1,DO@y+1
+   660  007E38  ECA7  F03B         	call	_DO	;wreg free
+   661  007E3C  EC8C  F03A         	call	_SILC	;wreg free
+   662  007E40  C00A  F001         	movff	main@x_344,DO@y
+   663  007E44  C00B  F002         	movff	main@x_344+1,DO@y+1
+   664  007E48  ECA7  F03B         	call	_DO	;wreg free
+   665  007E4C  C00A  F001         	movff	main@x_344,?_SILC
+   666  007E50  C00B  F002         	movff	main@x_344+1,?_SILC+1
+   667  007E54  EC8C  F03A         	call	_SILC	;wreg free
+   668  007E58  C00A  F001         	movff	main@x_344,FA@y
+   669  007E5C  C00B  F002         	movff	main@x_344+1,FA@y+1
+   670  007E60  EC6D  F03B         	call	_FA	;wreg free
+   671  007E64  C00A  F001         	movff	main@x_344,LA@y
+   672  007E68  C00B  F002         	movff	main@x_344+1,LA@y+1
+   673  007E6C  ECC9  F03A         	call	_LA	;wreg free
+   674                           
+   675                           ;caja.c: 82: DO(x);SILC();DO(x);SILC();DO(x);SILC(x);FA(x);LA(x);
+   676  007E70  C00A  F001         	movff	main@x_344,DO@y
+   677  007E74  C00B  F002         	movff	main@x_344+1,DO@y+1
+   678  007E78  ECA7  F03B         	call	_DO	;wreg free
+   679  007E7C  EC8C  F03A         	call	_SILC	;wreg free
+   680  007E80  C00A  F001         	movff	main@x_344,DO@y
+   681  007E84  C00B  F002         	movff	main@x_344+1,DO@y+1
+   682  007E88  ECA7  F03B         	call	_DO	;wreg free
+   683  007E8C  EC8C  F03A         	call	_SILC	;wreg free
+   684  007E90  C00A  F001         	movff	main@x_344,DO@y
+   685  007E94  C00B  F002         	movff	main@x_344+1,DO@y+1
+   686  007E98  ECA7  F03B         	call	_DO	;wreg free
+   687  007E9C  C00A  F001         	movff	main@x_344,?_SILC
+   688  007EA0  C00B  F002         	movff	main@x_344+1,?_SILC+1
+   689  007EA4  EC8C  F03A         	call	_SILC	;wreg free
+   690  007EA8  C00A  F001         	movff	main@x_344,FA@y
+   691  007EAC  C00B  F002         	movff	main@x_344+1,FA@y+1
+   692  007EB0  EC6D  F03B         	call	_FA	;wreg free
+   693  007EB4  C00A  F001         	movff	main@x_344,LA@y
+   694  007EB8  C00B  F002         	movff	main@x_344+1,LA@y+1
+   695  007EBC  ECC9  F03A         	call	_LA	;wreg free
+   696                           
+   697                           ;caja.c: 83: FA(x);SILC();FA(x);MI(x);SILC();MI(x);RE(x);SILC();RE(x);DO(x);
+   698  007EC0  C00A  F001         	movff	main@x_344,FA@y
+   699  007EC4  C00B  F002         	movff	main@x_344+1,FA@y+1
+   700  007EC8  EC6D  F03B         	call	_FA	;wreg free
+   701  007ECC  EC8C  F03A         	call	_SILC	;wreg free
+   702  007ED0  C00A  F001         	movff	main@x_344,FA@y
+   703  007ED4  C00B  F002         	movff	main@x_344+1,FA@y+1
+   704  007ED8  EC6D  F03B         	call	_FA	;wreg free
+   705  007EDC  C00A  F001         	movff	main@x_344,MI@y
+   706  007EE0  C00B  F002         	movff	main@x_344+1,MI@y+1
+   707  007EE4  ECFF  F03A         	call	_MI	;wreg free
+   708  007EE8  EC8C  F03A         	call	_SILC	;wreg free
+   709  007EEC  C00A  F001         	movff	main@x_344,MI@y
+   710  007EF0  C00B  F002         	movff	main@x_344+1,MI@y+1
+   711  007EF4  ECFF  F03A         	call	_MI	;wreg free
+   712  007EF8  C00A  F001         	movff	main@x_344,RE@y
+   713  007EFC  C00B  F002         	movff	main@x_344+1,RE@y+1
+   714  007F00  ECE3  F03B         	call	_RE	;wreg free
+   715  007F04  EC8C  F03A         	call	_SILC	;wreg free
+   716  007F08  C00A  F001         	movff	main@x_344,RE@y
+   717  007F0C  C00B  F002         	movff	main@x_344+1,RE@y+1
+   718  007F10  ECE3  F03B         	call	_RE	;wreg free
+   719  007F14  C00A  F001         	movff	main@x_344,DO@y
+   720  007F18  C00B  F002         	movff	main@x_344+1,DO@y+1
+   721  007F1C  ECA7  F03B         	call	_DO	;wreg free
+   722                           
+   723                           ;caja.c: 84: DO(x);SILC();DO(x);SILC();DO(x);MI(x);SOL(x);
+   724  007F20  C00A  F001         	movff	main@x_344,DO@y
+   725  007F24  C00B  F002         	movff	main@x_344+1,DO@y+1
+   726  007F28  ECA7  F03B         	call	_DO	;wreg free
+   727  007F2C  EC8C  F03A         	call	_SILC	;wreg free
+   728  007F30  C00A  F001         	movff	main@x_344,DO@y
+   729  007F34  C00B  F002         	movff	main@x_344+1,DO@y+1
+   730  007F38  ECA7  F03B         	call	_DO	;wreg free
+   731  007F3C  EC8C  F03A         	call	_SILC	;wreg free
+   732  007F40  C00A  F001         	movff	main@x_344,DO@y
+   733  007F44  C00B  F002         	movff	main@x_344+1,DO@y+1
+   734  007F48  ECA7  F03B         	call	_DO	;wreg free
+   735  007F4C  C00A  F001         	movff	main@x_344,MI@y
+   736  007F50  C00B  F002         	movff	main@x_344+1,MI@y+1
+   737  007F54  ECFF  F03A         	call	_MI	;wreg free
+   738  007F58  C00A  F001         	movff	main@x_344,SOL@y
+   739  007F5C  C00B  F002         	movff	main@x_344+1,SOL@y+1
+   740  007F60  EC95  F03A         	call	_SOL	;wreg free
+   741                           
+   742                           ;caja.c: 85: DO(x);SILC();DO(x);SILC();DO(x);MI(x);SOL(x);
+   743  007F64  C00A  F001         	movff	main@x_344,DO@y
+   744  007F68  C00B  F002         	movff	main@x_344+1,DO@y+1
+   745  007F6C  ECA7  F03B         	call	_DO	;wreg free
+   746  007F70  EC8C  F03A         	call	_SILC	;wreg free
+   747  007F74  C00A  F001         	movff	main@x_344,DO@y
+   748  007F78  C00B  F002         	movff	main@x_344+1,DO@y+1
+   749  007F7C  ECA7  F03B         	call	_DO	;wreg free
+   750  007F80  EC8C  F03A         	call	_SILC	;wreg free
+   751  007F84  C00A  F001         	movff	main@x_344,DO@y
+   752  007F88  C00B  F002         	movff	main@x_344+1,DO@y+1
+   753  007F8C  ECA7  F03B         	call	_DO	;wreg free
+   754  007F90  C00A  F001         	movff	main@x_344,MI@y
+   755  007F94  C00B  F002         	movff	main@x_344+1,MI@y+1
+   756  007F98  ECFF  F03A         	call	_MI	;wreg free
+   757  007F9C  C00A  F001         	movff	main@x_344,SOL@y
+   758  007FA0  C00B  F002         	movff	main@x_344+1,SOL@y+1
+   759  007FA4  EC95  F03A         	call	_SOL	;wreg free
+   760                           
+   761                           ;caja.c: 86: DO(x);RE(x);DO(x);SI(x);LA(x);SOL(x);FA(x);
+   762  007FA8  C00A  F001         	movff	main@x_344,DO@y
+   763  007FAC  C00B  F002         	movff	main@x_344+1,DO@y+1
+   764  007FB0  ECA7  F03B         	call	_DO	;wreg free
+   765  007FB4  C00A  F001         	movff	main@x_344,RE@y
+   766  007FB8  C00B  F002         	movff	main@x_344+1,RE@y+1
+   767  007FBC  ECE3  F03B         	call	_RE	;wreg free
+   768  007FC0  C00A  F001         	movff	main@x_344,DO@y
+   769  007FC4  C00B  F002         	movff	main@x_344+1,DO@y+1
+   770  007FC8  ECA7  F03B         	call	_DO	;wreg free
+   771  007FCC  C00A  F001         	movff	main@x_344,SI@y
+   772  007FD0  C00B  F002         	movff	main@x_344+1,SI@y+1
+   773  007FD4  EC35  F03B         	call	_SI	;wreg free
+   774  007FD8  C00A  F001         	movff	main@x_344,LA@y
+   775  007FDC  C00B  F002         	movff	main@x_344+1,LA@y+1
+   776  007FE0  ECC9  F03A         	call	_LA	;wreg free
+   777  007FE4  C00A  F001         	movff	main@x_344,SOL@y
+   778  007FE8  C00B  F002         	movff	main@x_344+1,SOL@y+1
+   779  007FEC  EC95  F03A         	call	_SOL	;wreg free
+   780  007FF0  C00A  F001         	movff	main@x_344,FA@y
+   781  007FF4  C00B  F002         	movff	main@x_344+1,FA@y+1
+   782  007FF8  EC6D  F03B         	call	_FA	;wreg free
+   783  007FFC  EF00  F000         	goto	start
+   784  008000                     __end_of_main:
+   785                           	opt stack 0
+   786                           intcon	equ	0xFF2
+   787                           
+   788 ;; *************** function _SOL *****************
+   789 ;; Defined at:
+   790 ;;		line 226 in file "caja.c"
+   791 ;; Parameters:    Size  Location     Type
+   792 ;;  y               2    0[COMRAM] int 
+   793 ;; Auto vars:     Size  Location     Type
+   794 ;;		None
+   795 ;; Return value:  Size  Location     Type
+   796 ;;                  1    wreg      void 
+   797 ;; Registers used:
+   798 ;;		wreg, status,2, status,0
+   799 ;; Tracked objects:
+   800 ;;		On entry : 0/0
+   801 ;;		On exit  : 0/0
+   802 ;;		Unchanged: 0/0
+   803 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7
+   804 ;;      Params:         2       0       0       0       0       0       0       0       0
+   805 ;;      Locals:         0       0       0       0       0       0       0       0       0
+   806 ;;      Temps:          0       0       0       0       0       0       0       0       0
+   807 ;;      Totals:         2       0       0       0       0       0       0       0       0
+   808 ;;Total ram usage:        2 bytes
+   809 ;; Hardware stack levels used:    1
+   810 ;; This function calls:
+   811 ;;		Nothing
+   812 ;; This function is called by:
+   813 ;;		_main
+   814 ;; This function uses a non-reentrant model
+   815 ;;
+   816                           
+   817                           	psect	text1
+   818  00752A                     __ptext1:
+   819                           	opt stack 0
+   820  00752A                     _SOL:
+   821                           	opt stack 30
+   822                           
+   823                           ;caja.c: 227: if(y==1){
+   824                           
+   825                           ;incstack = 0
+   826  00752A  0401               	decf	SOL@y,w,c
+   827  00752C  1002               	iorwf	SOL@y+1,w,c
+   828  00752E  A4D8               	btfss	status,2,c
+   829  007530  D004               	goto	l102
+   830                           
+   831                           ;caja.c: 228: TMR0=63192;
+   832  007532  0EF6               	movlw	246
+   833  007534  6ED7               	movwf	4055,c	;volatile
+   834  007536  0ED8               	movlw	216
+   835  007538  6ED6               	movwf	4054,c	;volatile
+   836  00753A                     l102:
+   837                           
+   838                           ;caja.c: 229: }
+   839                           ;caja.c: 230: if(y==2){
+   840  00753A  0E02               	movlw	2
+   841  00753C  1801               	xorwf	SOL@y,w,c
+   842  00753E  1002               	iorwf	SOL@y+1,w,c
+   843  007540  A4D8               	btfss	status,2,c
+   844  007542  D004               	goto	l103
+   845                           
+   846                           ;caja.c: 231: TMR0=64364;
+   847  007544  0EFB               	movlw	251
+   848  007546  6ED7               	movwf	4055,c	;volatile
+   849  007548  0E6C               	movlw	108
+   850  00754A  6ED6               	movwf	4054,c	;volatile
+   851  00754C                     l103:
+   852                           
+   853                           ;caja.c: 232: }
+   854                           ;caja.c: 233: if(y==3){
+   855  00754C  0E03               	movlw	3
+   856  00754E  1801               	xorwf	SOL@y,w,c
+   857  007550  1002               	iorwf	SOL@y+1,w,c
+   858  007552  A4D8               	btfss	status,2,c
+   859  007554  D004               	goto	l104
+   860                           
+   861                           ;caja.c: 234: TMR0=65047;
+   862  007556  0EFE               	movlw	254
+   863  007558  6ED7               	movwf	4055,c	;volatile
+   864  00755A  0E17               	movlw	23
+   865  00755C  6ED6               	movwf	4054,c	;volatile
+   866  00755E                     l104:
+   867                           
+   868                           ;caja.c: 235: }
+   869                           ;caja.c: 236: if(y==4){
+   870  00755E  0E04               	movlw	4
+   871  007560  1801               	xorwf	SOL@y,w,c
+   872  007562  1002               	iorwf	SOL@y+1,w,c
+   873  007564  A4D8               	btfss	status,2,c
+   874  007566  D004               	goto	l105
+   875                           
+   876                           ;caja.c: 237: TMR0=65223;
+   877  007568  0EFE               	movlw	254
+   878  00756A  6ED7               	movwf	4055,c	;volatile
+   879  00756C  0EC7               	movlw	199
+   880  00756E  6ED6               	movwf	4054,c	;volatile
+   881  007570                     l105:
+   882                           
+   883                           ;caja.c: 238: }
+   884                           ;caja.c: 239: TMR0ON = 1;
+   885  007570  8ED5               	bsf	4053,7,c	;volatile
+   886                           
+   887                           ;caja.c: 241: while(TMR0IF != 1){
+   888  007572  D00A               	goto	l106
+   889  007574                     l107:
+   890                           
+   891                           ;caja.c: 242: PORTDbits.RD0 = 1;
+   892  007574  8083               	bsf	3971,0,c	;volatile
+   893                           
+   894                           ;caja.c: 243: _delay((unsigned long)((1.275)*(4000000/4000.0)));
+   895  007576  0EFF               	movlw	255
+   896  007578                     u807:
+   897  007578  D000               	nop2	
+   898  00757A  2EE8               	decfsz	wreg,f,c
+   899  00757C  D7FD               	bra	u807
+   900                           
+   901                           ;caja.c: 244: PORTDbits.RD0 = 0;
+   902  00757E  9083               	bcf	3971,0,c	;volatile
+   903                           
+   904                           ;caja.c: 245: _delay((unsigned long)((1.275)*(4000000/4000.0)));
+   905  007580  0EFF               	movlw	255
+   906  007582                     u817:
+   907  007582  D000               	nop2	
+   908  007584  2EE8               	decfsz	wreg,f,c
+   909  007586  D7FD               	bra	u817
+   910  007588                     l106:
+   911  007588  A4F2               	btfss	intcon,2,c	;volatile
+   912  00758A  D7F4               	goto	l107
+   913                           
+   914                           ;caja.c: 246: }
+   915                           ;caja.c: 247: TMR0IF = 0;
+   916  00758C  94F2               	bcf	intcon,2,c	;volatile
+   917                           
+   918                           ;caja.c: 248: TMR0ON = 0;
+   919  00758E  9ED5               	bcf	4053,7,c	;volatile
+   920  007590  0012               	return		;funcret
+   921  007592                     __end_of_SOL:
+   922                           	opt stack 0
+   923                           intcon	equ	0xFF2
+   924                           wreg	equ	0xFE8
+   925                           status	equ	0xFD8
+   926                           
+   927 ;; *************** function _SILC *****************
+   928 ;; Defined at:
+   929 ;;		line 94 in file "caja.c"
+   930 ;; Parameters:    Size  Location     Type
+   931 ;;		None
+   932 ;; Auto vars:     Size  Location     Type
+   933 ;;		None
+   934 ;; Return value:  Size  Location     Type
+   935 ;;                  1    wreg      void 
+   936 ;; Registers used:
+   937 ;;		wreg
+   938 ;; Tracked objects:
+   939 ;;		On entry : 0/0
+   940 ;;		On exit  : 0/0
+   941 ;;		Unchanged: 0/0
+   942 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7
+   943 ;;      Params:         2       0       0       0       0       0       0       0       0
+   944 ;;      Locals:         0       0       0       0       0       0       0       0       0
+   945 ;;      Temps:          1       0       0       0       0       0       0       0       0
+   946 ;;      Totals:         3       0       0       0       0       0       0       0       0
+   947 ;;Total ram usage:        3 bytes
+   948 ;; Hardware stack levels used:    1
+   949 ;; This function calls:
+   950 ;;		Nothing
+   951 ;; This function is called by:
+   952 ;;		_main
+   953 ;; This function uses a non-reentrant model
+   954 ;;
+   955                           
+   956                           	psect	text2
+   957  007518                     __ptext2:
+   958                           	opt stack 0
+   959  007518                     _SILC:
+   960                           	opt stack 30
+   961                           
+   962                           ;caja.c: 95: _delay((unsigned long)((50)*(4000000/4000.0)));
+   963                           
+   964                           ;incstack = 0
+   965  007518  0E41               	movlw	65
+   966  00751A  6E03               	movwf	??_SILC& (0+255),c
+   967  00751C  0EEE               	movlw	238
+   968  00751E                     u827:
+   969  00751E  2EE8               	decfsz	wreg,f,c
+   970  007520  D7FE               	bra	u827
+   971  007522  2E03               	decfsz	??_SILC& (0+255),f,c
+   972  007524  D7FC               	bra	u827
+   973  007526  D000               	nop2	
+   974  007528  0012               	return		;funcret
+   975  00752A                     __end_of_SILC:
+   976                           	opt stack 0
+   977                           intcon	equ	0xFF2
+   978                           wreg	equ	0xFE8
+   979                           status	equ	0xFD8
+   980                           
+   981 ;; *************** function _SI *****************
+   982 ;; Defined at:
+   983 ;;		line 278 in file "caja.c"
+   984 ;; Parameters:    Size  Location     Type
+   985 ;;  y               2    0[COMRAM] int 
+   986 ;; Auto vars:     Size  Location     Type
+   987 ;;		None
+   988 ;; Return value:  Size  Location     Type
+   989 ;;                  1    wreg      void 
+   990 ;; Registers used:
+   991 ;;		wreg, status,2, status,0
+   992 ;; Tracked objects:
+   993 ;;		On entry : 0/0
+   994 ;;		On exit  : 0/0
+   995 ;;		Unchanged: 0/0
+   996 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7
+   997 ;;      Params:         2       0       0       0       0       0       0       0       0
+   998 ;;      Locals:         0       0       0       0       0       0       0       0       0
+   999 ;;      Temps:          0       0       0       0       0       0       0       0       0
+  1000 ;;      Totals:         2       0       0       0       0       0       0       0       0
+  1001 ;;Total ram usage:        2 bytes
+  1002 ;; Hardware stack levels used:    1
+  1003 ;; This function calls:
+  1004 ;;		Nothing
+  1005 ;; This function is called by:
+  1006 ;;		_main
+  1007 ;; This function uses a non-reentrant model
+  1008 ;;
+  1009                           
+  1010                           	psect	text3
+  1011  00766A                     __ptext3:
+  1012                           	opt stack 0
+  1013  00766A                     _SI:
+  1014                           	opt stack 30
+  1015                           
+  1016                           ;caja.c: 279: if(y==1){
+  1017                           
+  1018                           ;incstack = 0
+  1019  00766A  0401               	decf	SI@y,w,c
+  1020  00766C  1002               	iorwf	SI@y+1,w,c
+  1021  00766E  A4D8               	btfss	status,2,c
+  1022  007670  D004               	goto	l122
+  1023                           
+  1024                           ;caja.c: 280: TMR0=63192;
+  1025  007672  0EF6               	movlw	246
+  1026  007674  6ED7               	movwf	4055,c	;volatile
+  1027  007676  0ED8               	movlw	216
+  1028  007678  6ED6               	movwf	4054,c	;volatile
+  1029  00767A                     l122:
+  1030                           
+  1031                           ;caja.c: 281: }
+  1032                           ;caja.c: 282: if(y==2){
+  1033  00767A  0E02               	movlw	2
+  1034  00767C  1801               	xorwf	SI@y,w,c
+  1035  00767E  1002               	iorwf	SI@y+1,w,c
+  1036  007680  A4D8               	btfss	status,2,c
+  1037  007682  D004               	goto	l123
+  1038                           
+  1039                           ;caja.c: 283: TMR0=64364;
+  1040  007684  0EFB               	movlw	251
+  1041  007686  6ED7               	movwf	4055,c	;volatile
+  1042  007688  0E6C               	movlw	108
+  1043  00768A  6ED6               	movwf	4054,c	;volatile
+  1044  00768C                     l123:
+  1045                           
+  1046                           ;caja.c: 284: }
+  1047                           ;caja.c: 285: if(y==3){
+  1048  00768C  0E03               	movlw	3
+  1049  00768E  1801               	xorwf	SI@y,w,c
+  1050  007690  1002               	iorwf	SI@y+1,w,c
+  1051  007692  A4D8               	btfss	status,2,c
+  1052  007694  D004               	goto	l124
+  1053                           
+  1054                           ;caja.c: 286: TMR0=65047;
+  1055  007696  0EFE               	movlw	254
+  1056  007698  6ED7               	movwf	4055,c	;volatile
+  1057  00769A  0E17               	movlw	23
+  1058  00769C  6ED6               	movwf	4054,c	;volatile
+  1059  00769E                     l124:
+  1060                           
+  1061                           ;caja.c: 287: }
+  1062                           ;caja.c: 288: if(y==4){
+  1063  00769E  0E04               	movlw	4
+  1064  0076A0  1801               	xorwf	SI@y,w,c
+  1065  0076A2  1002               	iorwf	SI@y+1,w,c
+  1066  0076A4  A4D8               	btfss	status,2,c
+  1067  0076A6  D004               	goto	l125
+  1068                           
+  1069                           ;caja.c: 289: TMR0=65223;
+  1070  0076A8  0EFE               	movlw	254
+  1071  0076AA  6ED7               	movwf	4055,c	;volatile
+  1072  0076AC  0EC7               	movlw	199
+  1073  0076AE  6ED6               	movwf	4054,c	;volatile
+  1074  0076B0                     l125:
+  1075                           
+  1076                           ;caja.c: 290: }
+  1077                           ;caja.c: 291: TMR0ON = 1;
+  1078  0076B0  8ED5               	bsf	4053,7,c	;volatile
+  1079                           
+  1080                           ;caja.c: 293: while(TMR0IF != 1){
+  1081  0076B2  D00E               	goto	l126
+  1082  0076B4                     l127:
+  1083                           
+  1084                           ;caja.c: 294: PORTDbits.RD0 = 1;
+  1085  0076B4  8083               	bsf	3971,0,c	;volatile
+  1086                           
+  1087                           ;caja.c: 295: _delay((unsigned long)((1.014)*(4000000/4000.0)));
+  1088  0076B6  0ECA               	movlw	202
+  1089  0076B8                     u837:
+  1090  0076B8  D000               	nop2	
+  1091  0076BA  2EE8               	decfsz	wreg,f,c
+  1092  0076BC  D7FD               	bra	u837
+  1093  0076BE  D000               	nop2	
+  1094  0076C0  D000               	nop2	
+  1095                           
+  1096                           ;caja.c: 296: PORTDbits.RD0 = 0;
+  1097  0076C2  9083               	bcf	3971,0,c	;volatile
+  1098                           
+  1099                           ;caja.c: 297: _delay((unsigned long)((1.014)*(4000000/4000.0)));
+  1100  0076C4  0ECA               	movlw	202
+  1101  0076C6                     u847:
+  1102  0076C6  D000               	nop2	
+  1103  0076C8  2EE8               	decfsz	wreg,f,c
+  1104  0076CA  D7FD               	bra	u847
+  1105  0076CC  D000               	nop2	
+  1106  0076CE  D000               	nop2	
+  1107  0076D0                     l126:
+  1108  0076D0  A4F2               	btfss	intcon,2,c	;volatile
+  1109  0076D2  D7F0               	goto	l127
+  1110                           
+  1111                           ;caja.c: 298: }
+  1112                           ;caja.c: 299: TMR0IF = 0;
+  1113  0076D4  94F2               	bcf	intcon,2,c	;volatile
+  1114                           
+  1115                           ;caja.c: 300: TMR0ON = 0;
+  1116  0076D6  9ED5               	bcf	4053,7,c	;volatile
+  1117  0076D8  0012               	return		;funcret
+  1118  0076DA                     __end_of_SI:
+  1119                           	opt stack 0
+  1120                           intcon	equ	0xFF2
+  1121                           wreg	equ	0xFE8
+  1122                           status	equ	0xFD8
+  1123                           
+  1124 ;; *************** function _RE *****************
+  1125 ;; Defined at:
+  1126 ;;		line 144 in file "caja.c"
+  1127 ;; Parameters:    Size  Location     Type
+  1128 ;;  y               2    0[COMRAM] int 
+  1129 ;; Auto vars:     Size  Location     Type
+  1130 ;;		None
+  1131 ;; Return value:  Size  Location     Type
+  1132 ;;                  1    wreg      void 
+  1133 ;; Registers used:
+  1134 ;;		wreg, status,2, status,0
+  1135 ;; Tracked objects:
+  1136 ;;		On entry : 0/0
+  1137 ;;		On exit  : 0/0
+  1138 ;;		Unchanged: 0/0
+  1139 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7
+  1140 ;;      Params:         2       0       0       0       0       0       0       0       0
+  1141 ;;      Locals:         0       0       0       0       0       0       0       0       0
+  1142 ;;      Temps:          0       0       0       0       0       0       0       0       0
+  1143 ;;      Totals:         2       0       0       0       0       0       0       0       0
+  1144 ;;Total ram usage:        2 bytes
+  1145 ;; Hardware stack levels used:    1
+  1146 ;; This function calls:
+  1147 ;;		Nothing
+  1148 ;; This function is called by:
+  1149 ;;		_main
+  1150 ;; This function uses a non-reentrant model
+  1151 ;;
+  1152                           
+  1153                           	psect	text4
+  1154  0077C6                     __ptext4:
+  1155                           	opt stack 0
+  1156  0077C6                     _RE:
+  1157                           	opt stack 30
+  1158                           
+  1159                           ;caja.c: 145: if(y==1){
+  1160                           
+  1161                           ;incstack = 0
+  1162  0077C6  0401               	decf	RE@y,w,c
+  1163  0077C8  1002               	iorwf	RE@y+1,w,c
+  1164  0077CA  A4D8               	btfss	status,2,c
+  1165  0077CC  D004               	goto	l72
+  1166                           
+  1167                           ;caja.c: 146: TMR0=63192;
+  1168  0077CE  0EF6               	movlw	246
+  1169  0077D0  6ED7               	movwf	4055,c	;volatile
+  1170  0077D2  0ED8               	movlw	216
+  1171  0077D4  6ED6               	movwf	4054,c	;volatile
+  1172  0077D6                     l72:
+  1173                           
+  1174                           ;caja.c: 147: }
+  1175                           ;caja.c: 148: if(y==2){
+  1176  0077D6  0E02               	movlw	2
+  1177  0077D8  1801               	xorwf	RE@y,w,c
+  1178  0077DA  1002               	iorwf	RE@y+1,w,c
+  1179  0077DC  A4D8               	btfss	status,2,c
+  1180  0077DE  D004               	goto	l73
+  1181                           
+  1182                           ;caja.c: 149: TMR0=64364;
+  1183  0077E0  0EFB               	movlw	251
+  1184  0077E2  6ED7               	movwf	4055,c	;volatile
+  1185  0077E4  0E6C               	movlw	108
+  1186  0077E6  6ED6               	movwf	4054,c	;volatile
+  1187  0077E8                     l73:
+  1188                           
+  1189                           ;caja.c: 150: }
+  1190                           ;caja.c: 151: if(y==3){
+  1191  0077E8  0E03               	movlw	3
+  1192  0077EA  1801               	xorwf	RE@y,w,c
+  1193  0077EC  1002               	iorwf	RE@y+1,w,c
+  1194  0077EE  A4D8               	btfss	status,2,c
+  1195  0077F0  D004               	goto	l74
+  1196                           
+  1197                           ;caja.c: 152: TMR0=65047;
+  1198  0077F2  0EFE               	movlw	254
+  1199  0077F4  6ED7               	movwf	4055,c	;volatile
+  1200  0077F6  0E17               	movlw	23
+  1201  0077F8  6ED6               	movwf	4054,c	;volatile
+  1202  0077FA                     l74:
+  1203                           
+  1204                           ;caja.c: 153: }
+  1205                           ;caja.c: 154: if(y==4){
+  1206  0077FA  0E04               	movlw	4
+  1207  0077FC  1801               	xorwf	RE@y,w,c
+  1208  0077FE  1002               	iorwf	RE@y+1,w,c
+  1209  007800  A4D8               	btfss	status,2,c
+  1210  007802  D004               	goto	l75
+  1211                           
+  1212                           ;caja.c: 155: TMR0=65223;
+  1213  007804  0EFE               	movlw	254
+  1214  007806  6ED7               	movwf	4055,c	;volatile
+  1215  007808  0EC7               	movlw	199
+  1216  00780A  6ED6               	movwf	4054,c	;volatile
+  1217  00780C                     l75:
+  1218                           
+  1219                           ;caja.c: 156: }
+  1220                           ;caja.c: 157: TMR0ON = 1;
+  1221  00780C  8ED5               	bsf	4053,7,c	;volatile
+  1222                           
+  1223                           ;caja.c: 159: while(TMR0IF != 1){
+  1224  00780E  D012               	goto	l76
+  1225  007810                     l77:
+  1226                           
+  1227                           ;caja.c: 160: PORTDbits.RD0 = 1;
+  1228  007810  8083               	bsf	3971,0,c	;volatile
+  1229                           
+  1230                           ;caja.c: 161: _delay((unsigned long)((1.700)*(4000000/4000.0)));
+  1231  007812  0EF2               	movlw	242
+  1232  007814                     u857:
+  1233  007814  D000               	nop2	
+  1234  007816  D000               	nop2	
+  1235  007818  2EE8               	decfsz	wreg,f,c
+  1236  00781A  D7FC               	bra	u857
+  1237  00781C  D000               	nop2	
+  1238  00781E  D000               	nop2	
+  1239  007820  D000               	nop2	
+  1240                           
+  1241                           ;caja.c: 162: PORTDbits.RD0 = 0;
+  1242  007822  9083               	bcf	3971,0,c	;volatile
+  1243                           
+  1244                           ;caja.c: 163: _delay((unsigned long)((1.700)*(4000000/4000.0)));
+  1245  007824  0EF2               	movlw	242
+  1246  007826                     u867:
+  1247  007826  D000               	nop2	
+  1248  007828  D000               	nop2	
+  1249  00782A  2EE8               	decfsz	wreg,f,c
+  1250  00782C  D7FC               	bra	u867
+  1251  00782E  D000               	nop2	
+  1252  007830  D000               	nop2	
+  1253  007832  D000               	nop2	
+  1254  007834                     l76:
+  1255  007834  A4F2               	btfss	intcon,2,c	;volatile
+  1256  007836  D7EC               	goto	l77
+  1257                           
+  1258                           ;caja.c: 164: }
+  1259                           ;caja.c: 165: TMR0IF = 0;
+  1260  007838  94F2               	bcf	intcon,2,c	;volatile
+  1261                           
+  1262                           ;caja.c: 166: TMR0ON = 0;
+  1263  00783A  9ED5               	bcf	4053,7,c	;volatile
+  1264  00783C  0012               	return		;funcret
+  1265  00783E                     __end_of_RE:
+  1266                           	opt stack 0
+  1267                           intcon	equ	0xFF2
+  1268                           wreg	equ	0xFE8
+  1269                           status	equ	0xFD8
+  1270                           
+  1271 ;; *************** function _MI *****************
+  1272 ;; Defined at:
+  1273 ;;		line 173 in file "caja.c"
+  1274 ;; Parameters:    Size  Location     Type
+  1275 ;;  y               2    0[COMRAM] int 
+  1276 ;; Auto vars:     Size  Location     Type
+  1277 ;;		None
+  1278 ;; Return value:  Size  Location     Type
+  1279 ;;                  1    wreg      void 
+  1280 ;; Registers used:
+  1281 ;;		wreg, status,2, status,0
+  1282 ;; Tracked objects:
+  1283 ;;		On entry : 0/0
+  1284 ;;		On exit  : 0/0
+  1285 ;;		Unchanged: 0/0
+  1286 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7
+  1287 ;;      Params:         2       0       0       0       0       0       0       0       0
+  1288 ;;      Locals:         0       0       0       0       0       0       0       0       0
+  1289 ;;      Temps:          0       0       0       0       0       0       0       0       0
+  1290 ;;      Totals:         2       0       0       0       0       0       0       0       0
+  1291 ;;Total ram usage:        2 bytes
+  1292 ;; Hardware stack levels used:    1
+  1293 ;; This function calls:
+  1294 ;;		Nothing
+  1295 ;; This function is called by:
+  1296 ;;		_main
+  1297 ;; This function uses a non-reentrant model
+  1298 ;;
+  1299                           
+  1300                           	psect	text5
+  1301  0075FE                     __ptext5:
+  1302                           	opt stack 0
+  1303  0075FE                     _MI:
+  1304                           	opt stack 30
+  1305                           
+  1306                           ;caja.c: 174: if(y==1){
+  1307                           
+  1308                           ;incstack = 0
+  1309  0075FE  0401               	decf	MI@y,w,c
+  1310  007600  1002               	iorwf	MI@y+1,w,c
+  1311  007602  A4D8               	btfss	status,2,c
+  1312  007604  D004               	goto	l82
+  1313                           
+  1314                           ;caja.c: 175: TMR0=63192;
+  1315  007606  0EF6               	movlw	246
+  1316  007608  6ED7               	movwf	4055,c	;volatile
+  1317  00760A  0ED8               	movlw	216
+  1318  00760C  6ED6               	movwf	4054,c	;volatile
+  1319  00760E                     l82:
+  1320                           
+  1321                           ;caja.c: 176: }
+  1322                           ;caja.c: 177: if(y==2){
+  1323  00760E  0E02               	movlw	2
+  1324  007610  1801               	xorwf	MI@y,w,c
+  1325  007612  1002               	iorwf	MI@y+1,w,c
+  1326  007614  A4D8               	btfss	status,2,c
+  1327  007616  D004               	goto	l83
+  1328                           
+  1329                           ;caja.c: 178: TMR0=64364;
+  1330  007618  0EFB               	movlw	251
+  1331  00761A  6ED7               	movwf	4055,c	;volatile
+  1332  00761C  0E6C               	movlw	108
+  1333  00761E  6ED6               	movwf	4054,c	;volatile
+  1334  007620                     l83:
+  1335                           
+  1336                           ;caja.c: 179: }
+  1337                           ;caja.c: 180: if(y==3){
+  1338  007620  0E03               	movlw	3
+  1339  007622  1801               	xorwf	MI@y,w,c
+  1340  007624  1002               	iorwf	MI@y+1,w,c
+  1341  007626  A4D8               	btfss	status,2,c
+  1342  007628  D004               	goto	l84
+  1343                           
+  1344                           ;caja.c: 181: TMR0=65047;
+  1345  00762A  0EFE               	movlw	254
+  1346  00762C  6ED7               	movwf	4055,c	;volatile
+  1347  00762E  0E17               	movlw	23
+  1348  007630  6ED6               	movwf	4054,c	;volatile
+  1349  007632                     l84:
+  1350                           
+  1351                           ;caja.c: 182: }
+  1352                           ;caja.c: 183: if(y==4){
+  1353  007632  0E04               	movlw	4
+  1354  007634  1801               	xorwf	MI@y,w,c
+  1355  007636  1002               	iorwf	MI@y+1,w,c
+  1356  007638  A4D8               	btfss	status,2,c
+  1357  00763A  D004               	goto	l85
+  1358                           
+  1359                           ;caja.c: 184: TMR0=65223;
+  1360  00763C  0EFE               	movlw	254
+  1361  00763E  6ED7               	movwf	4055,c	;volatile
+  1362  007640  0EC7               	movlw	199
+  1363  007642  6ED6               	movwf	4054,c	;volatile
+  1364  007644                     l85:
+  1365                           
+  1366                           ;caja.c: 185: }
+  1367                           ;caja.c: 186: TMR0ON = 1;
+  1368  007644  8ED5               	bsf	4053,7,c	;volatile
+  1369                           
+  1370                           ;caja.c: 188: while(TMR0IF != 1){
+  1371  007646  D00C               	goto	l86
+  1372  007648                     l87:
+  1373                           
+  1374                           ;caja.c: 189: PORTDbits.RD0 = 1;
+  1375  007648  8083               	bsf	3971,0,c	;volatile
+  1376                           
+  1377                           ;caja.c: 190: _delay((unsigned long)((1.519)*(4000000/4000.0)));
+  1378  00764A  0ED9               	movlw	217
+  1379  00764C                     u877:
+  1380  00764C  D000               	nop2	
+  1381  00764E  D000               	nop2	
+  1382  007650  2EE8               	decfsz	wreg,f,c
+  1383  007652  D7FC               	bra	u877
+  1384                           
+  1385                           ;caja.c: 191: PORTDbits.RD0 = 0;
+  1386  007654  9083               	bcf	3971,0,c	;volatile
+  1387                           
+  1388                           ;caja.c: 192: _delay((unsigned long)((1.519)*(4000000/4000.0)));
+  1389  007656  0ED9               	movlw	217
+  1390  007658                     u887:
+  1391  007658  D000               	nop2	
+  1392  00765A  D000               	nop2	
+  1393  00765C  2EE8               	decfsz	wreg,f,c
+  1394  00765E  D7FC               	bra	u887
+  1395  007660                     l86:
+  1396  007660  A4F2               	btfss	intcon,2,c	;volatile
+  1397  007662  D7F2               	goto	l87
+  1398                           
+  1399                           ;caja.c: 193: }
+  1400                           ;caja.c: 194: TMR0IF = 0;
+  1401  007664  94F2               	bcf	intcon,2,c	;volatile
+  1402                           
+  1403                           ;caja.c: 195: TMR0ON = 0;
+  1404  007666  9ED5               	bcf	4053,7,c	;volatile
+  1405  007668  0012               	return		;funcret
+  1406  00766A                     __end_of_MI:
+  1407                           	opt stack 0
+  1408                           intcon	equ	0xFF2
+  1409                           wreg	equ	0xFE8
+  1410                           status	equ	0xFD8
+  1411                           
+  1412 ;; *************** function _LA *****************
+  1413 ;; Defined at:
+  1414 ;;		line 252 in file "caja.c"
+  1415 ;; Parameters:    Size  Location     Type
+  1416 ;;  y               2    0[COMRAM] int 
+  1417 ;; Auto vars:     Size  Location     Type
+  1418 ;;		None
+  1419 ;; Return value:  Size  Location     Type
+  1420 ;;                  1    wreg      void 
+  1421 ;; Registers used:
+  1422 ;;		wreg, status,2, status,0
+  1423 ;; Tracked objects:
+  1424 ;;		On entry : 0/0
+  1425 ;;		On exit  : 0/0
+  1426 ;;		Unchanged: 0/0
+  1427 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7
+  1428 ;;      Params:         2       0       0       0       0       0       0       0       0
+  1429 ;;      Locals:         0       0       0       0       0       0       0       0       0
+  1430 ;;      Temps:          0       0       0       0       0       0       0       0       0
+  1431 ;;      Totals:         2       0       0       0       0       0       0       0       0
+  1432 ;;Total ram usage:        2 bytes
+  1433 ;; Hardware stack levels used:    1
+  1434 ;; This function calls:
+  1435 ;;		Nothing
+  1436 ;; This function is called by:
+  1437 ;;		_main
+  1438 ;; This function uses a non-reentrant model
+  1439 ;;
+  1440                           
+  1441                           	psect	text6
+  1442  007592                     __ptext6:
+  1443                           	opt stack 0
+  1444  007592                     _LA:
+  1445                           	opt stack 30
+  1446                           
+  1447                           ;caja.c: 253: if(y==1){
+  1448                           
+  1449                           ;incstack = 0
+  1450  007592  0401               	decf	LA@y,w,c
+  1451  007594  1002               	iorwf	LA@y+1,w,c
+  1452  007596  A4D8               	btfss	status,2,c
+  1453  007598  D004               	goto	l112
+  1454                           
+  1455                           ;caja.c: 254: TMR0=63192;
+  1456  00759A  0EF6               	movlw	246
+  1457  00759C  6ED7               	movwf	4055,c	;volatile
+  1458  00759E  0ED8               	movlw	216
+  1459  0075A0  6ED6               	movwf	4054,c	;volatile
+  1460  0075A2                     l112:
+  1461                           
+  1462                           ;caja.c: 255: }
+  1463                           ;caja.c: 256: if(y==2){
+  1464  0075A2  0E02               	movlw	2
+  1465  0075A4  1801               	xorwf	LA@y,w,c
+  1466  0075A6  1002               	iorwf	LA@y+1,w,c
+  1467  0075A8  A4D8               	btfss	status,2,c
+  1468  0075AA  D004               	goto	l113
+  1469                           
+  1470                           ;caja.c: 257: TMR0=64364;
+  1471  0075AC  0EFB               	movlw	251
+  1472  0075AE  6ED7               	movwf	4055,c	;volatile
+  1473  0075B0  0E6C               	movlw	108
+  1474  0075B2  6ED6               	movwf	4054,c	;volatile
+  1475  0075B4                     l113:
+  1476                           
+  1477                           ;caja.c: 258: }
+  1478                           ;caja.c: 259: if(y==3){
+  1479  0075B4  0E03               	movlw	3
+  1480  0075B6  1801               	xorwf	LA@y,w,c
+  1481  0075B8  1002               	iorwf	LA@y+1,w,c
+  1482  0075BA  A4D8               	btfss	status,2,c
+  1483  0075BC  D004               	goto	l114
+  1484                           
+  1485                           ;caja.c: 260: TMR0=65047;
+  1486  0075BE  0EFE               	movlw	254
+  1487  0075C0  6ED7               	movwf	4055,c	;volatile
+  1488  0075C2  0E17               	movlw	23
+  1489  0075C4  6ED6               	movwf	4054,c	;volatile
+  1490  0075C6                     l114:
+  1491                           
+  1492                           ;caja.c: 261: }
+  1493                           ;caja.c: 262: if(y==4){
+  1494  0075C6  0E04               	movlw	4
+  1495  0075C8  1801               	xorwf	LA@y,w,c
+  1496  0075CA  1002               	iorwf	LA@y+1,w,c
+  1497  0075CC  A4D8               	btfss	status,2,c
+  1498  0075CE  D004               	goto	l115
+  1499                           
+  1500                           ;caja.c: 263: TMR0=65223;
+  1501  0075D0  0EFE               	movlw	254
+  1502  0075D2  6ED7               	movwf	4055,c	;volatile
+  1503  0075D4  0EC7               	movlw	199
+  1504  0075D6  6ED6               	movwf	4054,c	;volatile
+  1505  0075D8                     l115:
+  1506                           
+  1507                           ;caja.c: 264: }
+  1508                           ;caja.c: 265: TMR0ON = 1;
+  1509  0075D8  8ED5               	bsf	4053,7,c	;volatile
+  1510                           
+  1511                           ;caja.c: 267: while(TMR0IF != 1){
+  1512  0075DA  D00C               	goto	l116
+  1513  0075DC                     l117:
+  1514                           
+  1515                           ;caja.c: 268: PORTDbits.RD0 = 1;
+  1516  0075DC  8083               	bsf	3971,0,c	;volatile
+  1517                           
+  1518                           ;caja.c: 269: _delay((unsigned long)((1.136)*(4000000/4000.0)));
+  1519  0075DE  0EE3               	movlw	227
+  1520  0075E0                     u897:
+  1521  0075E0  D000               	nop2	
+  1522  0075E2  2EE8               	decfsz	wreg,f,c
+  1523  0075E4  D7FD               	bra	u897
+  1524  0075E6  F000               	nop	
+  1525                           
+  1526                           ;caja.c: 270: PORTDbits.RD0 = 0;
+  1527  0075E8  9083               	bcf	3971,0,c	;volatile
+  1528                           
+  1529                           ;caja.c: 271: _delay((unsigned long)((1.136)*(4000000/4000.0)));
+  1530  0075EA  0EE3               	movlw	227
+  1531  0075EC                     u907:
+  1532  0075EC  D000               	nop2	
+  1533  0075EE  2EE8               	decfsz	wreg,f,c
+  1534  0075F0  D7FD               	bra	u907
+  1535  0075F2  F000               	nop	
+  1536  0075F4                     l116:
+  1537  0075F4  A4F2               	btfss	intcon,2,c	;volatile
+  1538  0075F6  D7F2               	goto	l117
+  1539                           
+  1540                           ;caja.c: 272: }
+  1541                           ;caja.c: 273: TMR0IF = 0;
+  1542  0075F8  94F2               	bcf	intcon,2,c	;volatile
+  1543                           
+  1544                           ;caja.c: 274: TMR0ON = 0;
+  1545  0075FA  9ED5               	bcf	4053,7,c	;volatile
+  1546  0075FC  0012               	return		;funcret
+  1547  0075FE                     __end_of_LA:
+  1548                           	opt stack 0
+  1549                           intcon	equ	0xFF2
+  1550                           wreg	equ	0xFE8
+  1551                           status	equ	0xFD8
+  1552                           
+  1553 ;; *************** function _FA *****************
+  1554 ;; Defined at:
+  1555 ;;		line 200 in file "caja.c"
+  1556 ;; Parameters:    Size  Location     Type
+  1557 ;;  y               2    0[COMRAM] int 
+  1558 ;; Auto vars:     Size  Location     Type
+  1559 ;;		None
+  1560 ;; Return value:  Size  Location     Type
+  1561 ;;                  1    wreg      void 
+  1562 ;; Registers used:
+  1563 ;;		wreg, status,2, status,0
+  1564 ;; Tracked objects:
+  1565 ;;		On entry : 0/0
+  1566 ;;		On exit  : 0/0
+  1567 ;;		Unchanged: 0/0
+  1568 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7
+  1569 ;;      Params:         2       0       0       0       0       0       0       0       0
+  1570 ;;      Locals:         0       0       0       0       0       0       0       0       0
+  1571 ;;      Temps:          0       0       0       0       0       0       0       0       0
+  1572 ;;      Totals:         2       0       0       0       0       0       0       0       0
+  1573 ;;Total ram usage:        2 bytes
+  1574 ;; Hardware stack levels used:    1
+  1575 ;; This function calls:
+  1576 ;;		Nothing
+  1577 ;; This function is called by:
+  1578 ;;		_main
+  1579 ;; This function uses a non-reentrant model
+  1580 ;;
+  1581                           
+  1582                           	psect	text7
+  1583  0076DA                     __ptext7:
+  1584                           	opt stack 0
+  1585  0076DA                     _FA:
+  1586                           	opt stack 30
+  1587                           
+  1588                           ;caja.c: 201: if(y==1){
+  1589                           
+  1590                           ;incstack = 0
+  1591  0076DA  0401               	decf	FA@y,w,c
+  1592  0076DC  1002               	iorwf	FA@y+1,w,c
+  1593  0076DE  A4D8               	btfss	status,2,c
+  1594  0076E0  D004               	goto	l92
+  1595                           
+  1596                           ;caja.c: 202: TMR0=63192;
+  1597  0076E2  0EF6               	movlw	246
+  1598  0076E4  6ED7               	movwf	4055,c	;volatile
+  1599  0076E6  0ED8               	movlw	216
+  1600  0076E8  6ED6               	movwf	4054,c	;volatile
+  1601  0076EA                     l92:
+  1602                           
+  1603                           ;caja.c: 203: }
+  1604                           ;caja.c: 204: if(y==2){
+  1605  0076EA  0E02               	movlw	2
+  1606  0076EC  1801               	xorwf	FA@y,w,c
+  1607  0076EE  1002               	iorwf	FA@y+1,w,c
+  1608  0076F0  A4D8               	btfss	status,2,c
+  1609  0076F2  D004               	goto	l93
+  1610                           
+  1611                           ;caja.c: 205: TMR0=64364;
+  1612  0076F4  0EFB               	movlw	251
+  1613  0076F6  6ED7               	movwf	4055,c	;volatile
+  1614  0076F8  0E6C               	movlw	108
+  1615  0076FA  6ED6               	movwf	4054,c	;volatile
+  1616  0076FC                     l93:
+  1617                           
+  1618                           ;caja.c: 206: }
+  1619                           ;caja.c: 207: if(y==3){
+  1620  0076FC  0E03               	movlw	3
+  1621  0076FE  1801               	xorwf	FA@y,w,c
+  1622  007700  1002               	iorwf	FA@y+1,w,c
+  1623  007702  A4D8               	btfss	status,2,c
+  1624  007704  D004               	goto	l94
+  1625                           
+  1626                           ;caja.c: 208: TMR0=65047;
+  1627  007706  0EFE               	movlw	254
+  1628  007708  6ED7               	movwf	4055,c	;volatile
+  1629  00770A  0E17               	movlw	23
+  1630  00770C  6ED6               	movwf	4054,c	;volatile
+  1631  00770E                     l94:
+  1632                           
+  1633                           ;caja.c: 209: }
+  1634                           ;caja.c: 210: if(y==4){
+  1635  00770E  0E04               	movlw	4
+  1636  007710  1801               	xorwf	FA@y,w,c
+  1637  007712  1002               	iorwf	FA@y+1,w,c
+  1638  007714  A4D8               	btfss	status,2,c
+  1639  007716  D004               	goto	l95
+  1640                           
+  1641                           ;caja.c: 211: TMR0=65223;
+  1642  007718  0EFE               	movlw	254
+  1643  00771A  6ED7               	movwf	4055,c	;volatile
+  1644  00771C  0EC7               	movlw	199
+  1645  00771E  6ED6               	movwf	4054,c	;volatile
+  1646  007720                     l95:
+  1647                           
+  1648                           ;caja.c: 212: }
+  1649                           ;caja.c: 213: TMR0ON = 1;
+  1650  007720  8ED5               	bsf	4053,7,c	;volatile
+  1651                           
+  1652                           ;caja.c: 215: while(TMR0IF != 1){
+  1653  007722  D010               	goto	l96
+  1654  007724                     l97:
+  1655                           
+  1656                           ;caja.c: 216: PORTDbits.RD0 = 1;
+  1657  007724  8083               	bsf	3971,0,c	;volatile
+  1658                           
+  1659                           ;caja.c: 217: _delay((unsigned long)((1.432)*(4000000/4000.0)));
+  1660  007726  0ECC               	movlw	204
+  1661  007728                     u917:
+  1662  007728  D000               	nop2	
+  1663  00772A  D000               	nop2	
+  1664  00772C  2EE8               	decfsz	wreg,f,c
+  1665  00772E  D7FC               	bra	u917
+  1666  007730  D000               	nop2	
+  1667  007732  D000               	nop2	
+  1668                           
+  1669                           ;caja.c: 218: PORTDbits.RD0 = 0;
+  1670  007734  9083               	bcf	3971,0,c	;volatile
+  1671                           
+  1672                           ;caja.c: 219: _delay((unsigned long)((1.432)*(4000000/4000.0)));
+  1673  007736  0ECC               	movlw	204
+  1674  007738                     u927:
+  1675  007738  D000               	nop2	
+  1676  00773A  D000               	nop2	
+  1677  00773C  2EE8               	decfsz	wreg,f,c
+  1678  00773E  D7FC               	bra	u927
+  1679  007740  D000               	nop2	
+  1680  007742  D000               	nop2	
+  1681  007744                     l96:
+  1682  007744  A4F2               	btfss	intcon,2,c	;volatile
+  1683  007746  D7EE               	goto	l97
+  1684                           
+  1685                           ;caja.c: 220: }
+  1686                           ;caja.c: 221: TMR0IF = 0;
+  1687  007748  94F2               	bcf	intcon,2,c	;volatile
+  1688                           
+  1689                           ;caja.c: 222: TMR0ON = 0;
+  1690  00774A  9ED5               	bcf	4053,7,c	;volatile
+  1691  00774C  0012               	return		;funcret
+  1692  00774E                     __end_of_FA:
+  1693                           	opt stack 0
+  1694                           intcon	equ	0xFF2
+  1695                           wreg	equ	0xFE8
+  1696                           status	equ	0xFD8
+  1697                           
+  1698 ;; *************** function _DO *****************
+  1699 ;; Defined at:
+  1700 ;;		line 114 in file "caja.c"
+  1701 ;; Parameters:    Size  Location     Type
+  1702 ;;  y               2    0[COMRAM] int 
+  1703 ;; Auto vars:     Size  Location     Type
+  1704 ;;		None
+  1705 ;; Return value:  Size  Location     Type
+  1706 ;;                  1    wreg      void 
+  1707 ;; Registers used:
+  1708 ;;		wreg, status,2, status,0
+  1709 ;; Tracked objects:
+  1710 ;;		On entry : 0/0
+  1711 ;;		On exit  : 0/0
+  1712 ;;		Unchanged: 0/0
+  1713 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7
+  1714 ;;      Params:         2       0       0       0       0       0       0       0       0
+  1715 ;;      Locals:         0       0       0       0       0       0       0       0       0
+  1716 ;;      Temps:          1       0       0       0       0       0       0       0       0
+  1717 ;;      Totals:         3       0       0       0       0       0       0       0       0
+  1718 ;;Total ram usage:        3 bytes
+  1719 ;; Hardware stack levels used:    1
+  1720 ;; This function calls:
+  1721 ;;		Nothing
+  1722 ;; This function is called by:
+  1723 ;;		_main
+  1724 ;; This function uses a non-reentrant model
+  1725 ;;
+  1726                           
+  1727                           	psect	text8
+  1728  00774E                     __ptext8:
+  1729                           	opt stack 0
+  1730  00774E                     _DO:
+  1731                           	opt stack 30
+  1732                           
+  1733                           ;caja.c: 115: if(y==1){
+  1734                           
+  1735                           ;incstack = 0
+  1736  00774E  0401               	decf	DO@y,w,c
+  1737  007750  1002               	iorwf	DO@y+1,w,c
+  1738  007752  A4D8               	btfss	status,2,c
+  1739  007754  D004               	goto	l62
+  1740                           
+  1741                           ;caja.c: 116: TMR0=63192;
+  1742  007756  0EF6               	movlw	246
+  1743  007758  6ED7               	movwf	4055,c	;volatile
+  1744  00775A  0ED8               	movlw	216
+  1745  00775C  6ED6               	movwf	4054,c	;volatile
+  1746  00775E                     l62:
+  1747                           
+  1748                           ;caja.c: 117: }
+  1749                           ;caja.c: 118: if(y==2){
+  1750  00775E  0E02               	movlw	2
+  1751  007760  1801               	xorwf	DO@y,w,c
+  1752  007762  1002               	iorwf	DO@y+1,w,c
+  1753  007764  A4D8               	btfss	status,2,c
+  1754  007766  D004               	goto	l63
+  1755                           
+  1756                           ;caja.c: 119: TMR0=64364;
+  1757  007768  0EFB               	movlw	251
+  1758  00776A  6ED7               	movwf	4055,c	;volatile
+  1759  00776C  0E6C               	movlw	108
+  1760  00776E  6ED6               	movwf	4054,c	;volatile
+  1761  007770                     l63:
+  1762                           
+  1763                           ;caja.c: 120: }
+  1764                           ;caja.c: 121: if(y==3){
+  1765  007770  0E03               	movlw	3
+  1766  007772  1801               	xorwf	DO@y,w,c
+  1767  007774  1002               	iorwf	DO@y+1,w,c
+  1768  007776  A4D8               	btfss	status,2,c
+  1769  007778  D004               	goto	l64
+  1770                           
+  1771                           ;caja.c: 122: TMR0=65047;
+  1772  00777A  0EFE               	movlw	254
+  1773  00777C  6ED7               	movwf	4055,c	;volatile
+  1774  00777E  0E17               	movlw	23
+  1775  007780  6ED6               	movwf	4054,c	;volatile
+  1776  007782                     l64:
+  1777                           
+  1778                           ;caja.c: 123: }
+  1779                           ;caja.c: 124: if(y==4){
+  1780  007782  0E04               	movlw	4
+  1781  007784  1801               	xorwf	DO@y,w,c
+  1782  007786  1002               	iorwf	DO@y+1,w,c
+  1783  007788  A4D8               	btfss	status,2,c
+  1784  00778A  D004               	goto	l65
+  1785                           
+  1786                           ;caja.c: 125: TMR0=65223;
+  1787  00778C  0EFE               	movlw	254
+  1788  00778E  6ED7               	movwf	4055,c	;volatile
+  1789  007790  0EC7               	movlw	199
+  1790  007792  6ED6               	movwf	4054,c	;volatile
+  1791  007794                     l65:
+  1792                           
+  1793                           ;caja.c: 126: }
+  1794                           ;caja.c: 128: TMR0ON = 1;
+  1795  007794  8ED5               	bsf	4053,7,c	;volatile
+  1796                           
+  1797                           ;caja.c: 130: while(TMR0IF != 1){
+  1798  007796  D012               	goto	l66
+  1799  007798                     l67:
+  1800                           
+  1801                           ;caja.c: 131: PORTDbits.RD0 = 1;
+  1802  007798  8083               	bsf	3971,0,c	;volatile
+  1803                           
+  1804                           ;caja.c: 132: _delay((unsigned long)((1.915)*(4000000/4000.0)));
+  1805  00779A  0E03               	movlw	3
+  1806  00779C  6E03               	movwf	??_DO& (0+255),c
+  1807  00779E  0E7B               	movlw	123
+  1808  0077A0                     u937:
+  1809  0077A0  2EE8               	decfsz	wreg,f,c
+  1810  0077A2  D7FE               	bra	u937
+  1811  0077A4  2E03               	decfsz	??_DO& (0+255),f,c
+  1812  0077A6  D7FC               	bra	u937
+  1813  0077A8  D000               	nop2	
+  1814                           
+  1815                           ;caja.c: 133: PORTDbits.RD0 = 0;
+  1816  0077AA  9083               	bcf	3971,0,c	;volatile
+  1817                           
+  1818                           ;caja.c: 134: _delay((unsigned long)((1.885)*(4000000/4000.0)));
+  1819  0077AC  0E03               	movlw	3
+  1820  0077AE  6E03               	movwf	??_DO& (0+255),c
+  1821  0077B0  0E71               	movlw	113
+  1822  0077B2                     u947:
+  1823  0077B2  2EE8               	decfsz	wreg,f,c
+  1824  0077B4  D7FE               	bra	u947
+  1825  0077B6  2E03               	decfsz	??_DO& (0+255),f,c
+  1826  0077B8  D7FC               	bra	u947
+  1827  0077BA  D000               	nop2	
+  1828  0077BC                     l66:
+  1829  0077BC  A4F2               	btfss	intcon,2,c	;volatile
+  1830  0077BE  D7EC               	goto	l67
+  1831                           
+  1832                           ;caja.c: 135: }
+  1833                           ;caja.c: 136: TMR0IF = 0;
+  1834  0077C0  94F2               	bcf	intcon,2,c	;volatile
+  1835                           
+  1836                           ;caja.c: 137: TMR0ON = 0;
+  1837  0077C2  9ED5               	bcf	4053,7,c	;volatile
+  1838  0077C4  0012               	return		;funcret
+  1839  0077C6                     __end_of_DO:
+  1840                           	opt stack 0
+  1841  0000                     intcon	equ	0xFF2
+  1842                           wreg	equ	0xFE8
+  1843                           status	equ	0xFD8
+  1844                           intcon	equ	0xFF2
+  1845                           wreg	equ	0xFE8
+  1846                           status	equ	0xFD8
+  1847                           
+  1848                           	psect	rparam
+  1849  0000                     intcon	equ	0xFF2
+  1850                           wreg	equ	0xFE8
+  1851                           status	equ	0xFD8
+
+
+Data Sizes:
+    Strings     0
+    Constant    0
+    Data        0
+    BSS         0
+    Persistent  0
+    Stack       0
+
+Auto Spaces:
+    Space          Size  Autos    Used
+    COMRAM           95     11      11
+    BANK0           160      0       0
+    BANK1           256      0       0
+    BANK2           256      0       0
+    BANK3           256      0       0
+    BANK4           256      0       0
+    BANK5           256      0       0
+    BANK6           256      0       0
+    BANK7           256      0       0
+
+Pointer List with Targets:
+
+    None.
+
+Critical Paths under _main in COMRAM
+
+    _main->_DO
+    _main->_SILC
+
+Critical Paths under _main in BANK0
+
+    None.
+
+Critical Paths under _main in BANK1
+
+    None.
+
+Critical Paths under _main in BANK2
+
+    None.
+
+Critical Paths under _main in BANK3
+
+    None.
+
+Critical Paths under _main in BANK4
+
+    None.
+
+Critical Paths under _main in BANK5
+
+    None.
+
+Critical Paths under _main in BANK6
+
+    None.
+
+Critical Paths under _main in BANK7
+
+    None.
+
+Call Graph Tables:
+
+ ---------------------------------------------------------------------------------
+ (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
+ ---------------------------------------------------------------------------------
+ (0) _main                                                14    14      0   14124
+                                              3 COMRAM     8     8      0
+                                 _DO
+                                 _FA
+                                 _LA
+                                 _MI
+                                 _RE
+                                 _SI
+                               _SILC
+                                _SOL
+ ---------------------------------------------------------------------------------
+ (1) _SOL                                                  2     0      2    1000
+                                              0 COMRAM     2     0      2
+ ---------------------------------------------------------------------------------
+ (1) _SILC                                                 3     1      2       0
+                                              0 COMRAM     3     1      2
+ ---------------------------------------------------------------------------------
+ (1) _SI                                                   2     0      2     392
+                                              0 COMRAM     2     0      2
+ ---------------------------------------------------------------------------------
+ (1) _RE                                                   2     0      2    1000
+                                              0 COMRAM     2     0      2
+ ---------------------------------------------------------------------------------
+ (1) _MI                                                   2     0      2    1304
+                                              0 COMRAM     2     0      2
+ ---------------------------------------------------------------------------------
+ (1) _LA                                                   2     0      2    1000
+                                              0 COMRAM     2     0      2
+ ---------------------------------------------------------------------------------
+ (1) _FA                                                   2     0      2    1608
+                                              0 COMRAM     2     0      2
+ ---------------------------------------------------------------------------------
+ (1) _DO                                                   3     1      2    4648
+                                              0 COMRAM     3     1      2
+ ---------------------------------------------------------------------------------
+ Estimated maximum stack depth 1
+ ---------------------------------------------------------------------------------
+
+ Call Graph Graphs:
+
+ _main (ROOT)
+   _DO
+   _FA
+   _LA
+   _MI
+   _RE
+   _SI
+   _SILC
+   _SOL
+
+ Address spaces:
+Name               Size   Autos  Total    Cost      Usage
+BITCOMRAM           5F      0       0       0        0.0%
+EEDATA             100      0       0       0        0.0%
+NULL                 0      0       0       0        0.0%
+CODE                 0      0       0       0        0.0%
+COMRAM              5F      B       B       1       11.6%
+STACK                0      0       0       2        0.0%
+DATA                 0      0       0       3        0.0%
+BITBANK0            A0      0       0       4        0.0%
+BANK0               A0      0       0       5        0.0%
+BITBANK1           100      0       0       6        0.0%
+BANK1              100      0       0       7        0.0%
+BITBANK2           100      0       0       8        0.0%
+BANK2              100      0       0       9        0.0%
+BITBANK3           100      0       0      10        0.0%
+BANK3              100      0       0      11        0.0%
+BITBANK4           100      0       0      12        0.0%
+BANK4              100      0       0      13        0.0%
+BITBANK5           100      0       0      14        0.0%
+BANK5              100      0       0      15        0.0%
+BITBANK6           100      0       0      16        0.0%
+BANK6              100      0       0      17        0.0%
+BITBANK7           100      0       0      18        0.0%
+BANK7              100      0       0      19        0.0%
+ABS                  0      0       0      20        0.0%
+BIGRAM             7FF      0       0      21        0.0%
+BITSFR               0      0       0     200        0.0%
+SFR                  0      0       0     200        0.0%
+
+
+Microchip Technology PIC18 Macro Assembler V1.43 build -156212558 
+Symbol Table                                                                                   Fri Nov 27 18:52:52 2020
+
+                     _FA 76DA                       l43 7A42                       l44 7C2A  
+                     l45 7E12                       l62 775E                       l63 7770  
+                     l64 7782                       l72 77D6                       l65 7794  
+                     l73 77E8                       l66 77BC                       l82 760E  
+                     l74 77FA                       l67 7798                       l83 7620  
+                     l75 780C                       _DO 774E                       l92 76EA  
+                     l84 7632                       l76 7834                       l93 76FC  
+                     l85 7644                       l77 7810                       _LA 7592  
+                     l94 770E                       l86 7660                       l95 7720  
+                     l87 7648                       l96 7744                       l97 7724  
+                     _MI 75FE                       _RE 77C6                       _SI 766A  
+                    FA@y 0001                      ?_FA 0001                      ?_DO 0001  
+                    ?_LA 0001                      DO@y 0001                      ?_MI 0001  
+                    LA@y 0001                      ?_RE 0001                      ?_SI 0001  
+                    MI@y 0001                      RE@y 0001                      SI@y 0001  
+                    l102 753A                      l103 754C                      l112 75A2  
+                    l104 755E                      l113 75B4                      l105 7570  
+                    l114 75C6                      l122 767A                      l106 7588  
+                    l115 75D8                      l123 768C                      l107 7574  
+                    l116 75F4                      l124 769E                      l117 75DC  
+                    l125 76B0                      l126 76D0                      l127 76B4  
+                    u807 7578                      u817 7582                      u907 75EC  
+                    u827 751E                      u917 7728                      u837 76B8  
+                    u927 7738                      u847 76C6                      u937 77A0  
+                    u857 7814                      u947 77B2                      u867 7826  
+                    u877 764C                      _SOL 752A                      u887 7658  
+                    u897 75E0                      wreg 000FE8             __CFG_FOSC$HS 000000  
+                   ??_FA 0003                     ??_DO 0003                     ??_LA 0003  
+                   ??_MI 0003                     ??_RE 0003                     ??_SI 0003  
+                   ?_SOL 0001             __CFG_WDT$OFF 000000                     SOL@y 0001  
+                   _SILC 7518                     _TMR0 000FD6                     _main 783E  
+                   start 0000            __CFG_MCLRE$ON 000000             ___param_bank 000000  
+                  ??_SOL 0003                    ?_SILC 0001                    ?_main 0001  
+                  _PORTD 000F83                    _TRISC 000F94                    _TRISD 000F95  
+                  main@x 0004                    status 000FD8             __end_of_SILC 752A  
+        __initialization 7512             __end_of_main 8000                   ??_SILC 0003  
+                 ??_main 0004            __activetblptr 000000                   _TMR0IF 007F92  
+                 _TMR0ON 007EAF               __accesstop 0060  __end_of__initialization 7512  
+          ___rparam_used 000001           __pcstackCOMRAM 0001               __end_of_FA 774E  
+             __end_of_DO 77C6               __end_of_LA 75FE               __end_of_MI 766A  
+             __end_of_RE 783E               __end_of_SI 76DA                  __Hparam 0000  
+                __Lparam 0000                  __pcinit 7512                  __ramtop 0800  
+                __ptext0 783E                  __ptext1 752A                  __ptext2 7518  
+                __ptext3 766A                  __ptext4 77C6                  __ptext5 75FE  
+                __ptext6 7592                  __ptext7 76DA                  __ptext8 774E  
+              _T0CONbits 000FD5             __size_of_SOL 0068     end_of_initialization 7512  
+              _PORTCbits 000F82                _PORTDbits 000F83      start_initialization 7512  
+            __end_of_SOL 7592              __size_of_FA 0074              __size_of_DO 0078  
+            __size_of_LA 006C              __size_of_MI 006C              __size_of_RE 0078  
+            __size_of_SI 0070                main@x_342 0006                main@x_343 0008  
+              main@x_344 000A                 __Hrparam 0000                 __Lrparam 0000  
+          __size_of_SILC 0012            __size_of_main 07C2               _INTCONbits 000FF2  
